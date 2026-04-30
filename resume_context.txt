@@ -1,0 +1,38 @@
+Name: Yuvraj Soni
+
+Contact Details:
+Email: soniyuvraj9499@gmail.com
+Phone: +91 9499561272
+GitHub: https://github.com/Yuvrajsoni05
+LinkedIn: https://www.linkedin.com/in/yuvraj-champaneri-2678a7248
+Portfolio: soniyuvraj.in
+
+Skills:
+Python
+Django
+AI
+n8n
+REST APIs
+PostgreSQL
+SQLite
+Git & GitHub
+HTML
+CSS
+JavaScript
+
+Projects:
+Built Django CRUD systems.
+Integrated Google Drive with n8n.
+Created RAG chatbot systems.
+Developed Product Management System using Django.
+Built automation workflows using n8n.
+Created admin management systems with authentication and role management.
+
+Experience:
+1 year Python development experience.
+Junior Python Developer at Mighty Ventures Business Solutions LLP.
+Completed Python Developer Internship at Mighty Ventures Business Solutions LLP.
+
+Education:
+MSc IT
+BSc IT

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<section id="image-gallery" class="gallery">
+  <div class="container" data-aos="fade-up">
+    <div class="section-header">
+      <h2>Certifications</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card">
+          <a href="#" data-toggle="modal" data-target="#imageModal1">
+            <img src="{% static 'image/powerbi.png' %}" class="card-img-top img-fluid" alt="Power BI Certification Image" style="height: 300px; object-fit: cover;">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">Power BI Certification</h5>
+
+          </div>
+        </div>
+      </div>
+<!--      <div class="col-lg-4 col-md-6 mb-4">-->
+<!--        <div class="card">-->
+<!--          <a href="#" data-toggle="modal" data-target="#imageModal2">-->
+<!--            <img src="{% static 'image/another-cert.png' %}" class="card-img-top img-fluid" alt="Another Certification Image" style="height: 300px; object-fit: cover;">-->
+<!--          </a>-->
+<!--          <div class="card-body">-->
+<!--            <h5 class="card-title">Another Certification</h5>-->
+
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+    </div>
+  </div>
+</section>
+
+<!-- Modals -->
+<div class="modal fade" id="imageModal1" tabindex="-1" aria-labelledby="imageModalLabel1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel1">Power BI Certification</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body d-flex justify-content-center">
+        <img src="{% static 'image/powerbi.png' %}" alt="Power BI Certification Image" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="modal fade" id="imageModal2" tabindex="-1" aria-labelledby="imageModalLabel2" aria-hidden="true">-->
+<!--  <div class="modal-dialog modal-dialog-centered modal-lg">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <h5 class="modal-title" id="imageModalLabel2">Another Certification</h5>-->
+<!--        <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--          <span aria-hidden="true">&times;</span>-->
+<!--        </button>-->
+<!--      </div>-->
+<!--      <div class="modal-body d-flex justify-content-center">-->
+<!--        <img src="{% static 'image/another-cert.png' %}" alt="Another Certification Image" class="img-fluid">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
