@@ -66,98 +66,80 @@ resume_context = load_resume()
 
 @csrf_exempt
 def chatbot(request):
-
     if request.method == "POST":
-
         try:
-
             # Get frontend data
             data = json.loads(request.body)
-
             user_message = data.get("message", "")
 
             if not user_message:
-
                 return JsonResponse({
                     "reply": "Please enter a message."
                 })
 
+            if "step" not in request.session:
+                request.session["step"] = "ask_name"
 
+            step = request.session["step"]
+
+            if step == "ask_name":
+
+                request.session["step"] = "get_name"
+
+                return JsonResponse({
+                    "reply": "What is your name?"
+                })
+
+            elif step == "get_name":
+
+                request.session["name"] = user_message
+
+                print("NAME:", request.session["name"])
+
+                request.session["step"] = "chat"
+
+                return JsonResponse({
+                    "reply": f"Hello {user_message}, you are connected."
+                })
             # AI Request
             response = requests.post(
-
                 API_URL,
-
                 headers=HEADERS,
-
                 json={
-
                     "model": "meta-llama/Llama-3.1-8B-Instruct",
-
                     "messages": [
-
                         {
                             "role": "system",
-
                             "content": f"""
                             You are Yuvraj Soni's AI assistant.
-
                             Use the resume context below to answer questions professionally.
-
                             Resume Context:
                             {resume_context}
                             """
                         },
-
                         {
                             "role": "user",
-
                             "content": user_message
                         }
-
                     ],
-
                     "max_tokens": 200,
-
                     "temperature": 0.7
-
                 }
-
             )
-
-
-            # print("STATUS CODE:", response.status_code)
-            # print("RESPONSE:", response.text)
-
-
-            # Error Handling
             if response.status_code != 200:
-
                 return JsonResponse({
                     "reply": response.text
                 })
 
-
-            # Convert response
             result = response.json()
-
-
-            # Extract AI response
             bot_reply = result["choices"][0]["message"]["content"]
-
-
             return JsonResponse({
                 "reply": bot_reply
             })
-
-
         except Exception as e:
-
             return JsonResponse({
                 "reply": str(e)
             })
-
-
     return JsonResponse({
         "error": "Invalid request"
     })

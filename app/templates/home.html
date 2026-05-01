@@ -12,815 +12,9 @@
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
 
-  <style>
-    :root {
-      --g: #1a6b4a;
-      --gl: #e8f5ee;
-      --gb: rgba(26, 107, 74, .18);
-      --bg: #f8f7f5;
-      --bg2: #f0eeea;
-      --bd: #e8e5df;
-      --tx: #1a1814;
-      --mu: #6b6560;
-      --fh: 'Instrument Serif', serif;
-      --fb: 'Outfit', sans-serif;
-      --fm: 'JetBrains Mono', monospace;
-    }
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
 
-    body {
-      font-family: var(--fb);
-      background: var(--bg);
-      color: var(--tx);
-      margin: 0;
-    }
-
-    /* NAV */
-    .navbar {
-      background: rgba(248, 247, 245, .96) !important;
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--bd);
-    }
-
-    .navbar-brand {
-      font-family: var(--fh);
-      font-style: italic;
-      font-size: 1.1rem;
-      color: var(--tx) !important;
-    }
-
-    .navbar-brand span {
-      color: var(--g);
-      font-style: normal;
-    }
-
-    .nav-link {
-      color: var(--mu) !important;
-      font-size: .83rem;
-      font-weight: 500;
-      border-radius: 100px;
-      padding: 5px 12px !important;
-      transition: all .15s;
-    }
-
-    .nav-link:hover {
-      background: var(--bg2);
-      color: var(--tx) !important;
-    }
-
-    .btn-hire {
-      background: var(--g) !important;
-      color: #fff !important;
-      border-radius: 100px !important;
-      font-weight: 600;
-      font-size: .83rem;
-      padding: 5px 16px !important;
-    }
-
-    .btn-hire:hover {
-      background: #145a3c !important;
-    }
-
-    .btn-dl {
-      background: #fff !important;
-      color: var(--tx) !important;
-      border: 1.5px solid var(--bd) !important;
-      border-radius: 100px !important;
-      font-size: .83rem;
-      font-weight: 500;
-      padding: 5px 14px !important;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      transition: all .15s;
-    }
-
-    .btn-dl:hover {
-      background: var(--gl) !important;
-      border-color: var(--g) !important;
-      color: var(--g) !important;
-    }
-
-    /* SECTIONS */
-    .sec-label {
-      font-family: var(--fm);
-      font-size: .66rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--g);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .sec-label::before {
-      content: '';
-      width: 16px;
-      height: 1.5px;
-      background: var(--g);
-      border-radius: 2px;
-    }
-
-    .sec-title {
-      font-family: var(--fh);
-      font-size: clamp(1.7rem, 4vw, 2.4rem);
-      font-weight: 400;
-      letter-spacing: -.5px;
-      line-height: 1.15;
-    }
-
-    /* HERO */
-    #hero {
-      min-height: 100vh;
-      padding-top: 68px;
-      background: #fff;
-      border-bottom: 1px solid var(--bd);
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle, #ccc9c0 1px, transparent 1px);
-      background-size: 28px 28px;
-      opacity: .22;
-      pointer-events: none;
-    }
-
-    .hero-name {
-      font-family: var(--fh);
-      font-size: clamp(2.4rem, 6vw, 4.4rem);
-      font-weight: 400;
-      letter-spacing: -1.5px;
-      line-height: 1.05;
-    }
-
-    .hero-name em {
-      font-style: italic;
-      color: var(--g);
-    }
-
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: var(--gl);
-      border: 1px solid var(--gb);
-      color: var(--g);
-      font-family: var(--fm);
-      font-size: .68rem;
-      padding: 4px 13px;
-      border-radius: 100px;
-    }
-
-    .status-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--g);
-      border-radius: 50%;
-      animation: blink 2s infinite;
-      display: inline-block;
-    }
-
-    @keyframes blink {
-
-      0%,
-      100% {
-        opacity: 1
-      }
-
-      50% {
-        opacity: .3
-      }
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: var(--bg2);
-      border: 1px solid var(--bd);
-      color: var(--mu);
-      font-size: .78rem;
-      font-weight: 500;
-      padding: 4px 12px;
-      border-radius: 100px;
-    }
-
-    /* SHOWCASE CARD */
-    .sc-card {
-      background: #fff;
-      border: 1.5px solid var(--bd);
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, .05);
-    }
-
-    .svc-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 12px;
-      border-radius: 10px;
-      background: var(--bg);
-      border: 1px solid var(--bd);
-      transition: all .18s;
-    }
-
-    .svc-row:hover {
-      background: var(--gl);
-      border-color: var(--gb);
-    }
-
-    .svc-em {
-      width: 34px;
-      height: 34px;
-      background: #fff;
-      border-radius: 9px;
-      border: 1px solid var(--bd);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .svc-badge {
-      font-family: var(--fm);
-      font-size: .6rem;
-      background: #fff;
-      border: 1px solid var(--bd);
-      color: var(--mu);
-      padding: 2px 6px;
-      border-radius: 4px;
-      white-space: nowrap;
-    }
-
-    .dot-r {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #ff5f57;
-    }
-
-    .dot-y {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #febc2e;
-    }
-
-    .dot-g {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #28c840;
-    }
-
-    .soc-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      background: var(--bg);
-      border: 1px solid var(--bd);
-      color: var(--mu);
-      font-size: .74rem;
-      font-weight: 500;
-      padding: 7px 0;
-      border-radius: 9px;
-      text-decoration: none;
-      transition: all .15s;
-    }
-
-    .soc-btn:hover {
-      background: var(--tx);
-      color: #fff;
-      border-color: var(--tx);
-    }
-
-    /* SERVICE CARDS */
-    .sv-card {
-      background: var(--bg);
-      border: 1.5px solid var(--bd) !important;
-      border-radius: 14px !important;
-      transition: all .22s;
-      height: 100%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .sv-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--g);
-      transform: scaleX(0);
-      transition: transform .22s;
-      transform-origin: left;
-    }
-
-    .sv-card:hover {
-      background: #fff;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, .07) !important;
-      transform: translateY(-3px);
-    }
-
-    .sv-card:hover::after {
-      transform: scaleX(1);
-    }
-
-    .sv-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-    }
-
-    .ic-g {
-      background: var(--gl);
-      border: 1px solid var(--gb);
-    }
-
-    .ic-o {
-      background: #fdf0e8;
-      border: 1px solid rgba(181, 71, 10, .15);
-    }
-
-    .ic-i {
-      background: #eef2ff;
-      border: 1px solid rgba(99, 102, 241, .15);
-    }
-
-    .ic-p {
-      background: #fdf4ff;
-      border: 1px solid rgba(168, 85, 247, .15);
-    }
-
-    .ic-a {
-      background: #fff7ed;
-      border: 1px solid rgba(249, 115, 22, .15);
-    }
-
-    .ic-s {
-      background: #f0f9ff;
-      border: 1px solid rgba(14, 165, 233, .15);
-    }
-
-    .tmono {
-      font-family: var(--fm);
-      font-size: .61rem;
-      background: #fff;
-      border: 1px solid var(--bd);
-      color: var(--mu);
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
-
-    /* ABOUT */
-    .ahl {
-      background: var(--gl);
-      border-left: 3px solid var(--g);
-      color: var(--g);
-      font-size: .87rem;
-      font-weight: 500;
-      border-radius: 0 8px 8px 0;
-    }
-
-    .ic-row {
-      background: #fff;
-      border: 1px solid var(--bd);
-      border-radius: 10px;
-      transition: all .15s;
-    }
-
-    .ic-row:hover {
-      border-color: #ccc;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
-    }
-
-    .ic-dot {
-      width: 30px;
-      height: 30px;
-      background: var(--bg);
-      border-radius: 8px;
-      border: 1px solid var(--bd);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: .82rem;
-      flex-shrink: 0;
-    }
-
-    .stat-box {
-      background: #fff;
-      border: 1px solid var(--bd);
-      border-radius: 11px;
-      text-align: center;
-      transition: all .15s;
-    }
-
-    .stat-box:hover {
-      border-color: var(--g);
-    }
-
-    .stat-num {
-      font-family: var(--fh);
-      font-size: 1.75rem;
-      font-weight: 400;
-      letter-spacing: -.3px;
-      line-height: 1;
-    }
-
-    /* EXPERIENCE */
-    .exp-tab {
-      cursor: pointer;
-      border-radius: 9px;
-      border: 1px solid transparent;
-      transition: all .15s;
-    }
-
-    .exp-tab.active {
-      background: var(--gl);
-      border-color: var(--gb);
-    }
-
-    .exp-tab:hover:not(.active) {
-      background: var(--bg2);
-    }
-
-    .exp-tab.active .exp-co {
-      color: var(--g) !important;
-    }
-
-    .exp-panel {
-      display: none;
-    }
-
-    .exp-panel.active {
-      display: block;
-      animation: fu .28s ease;
-    }
-
-    @keyframes fu {
-      from {
-        opacity: 0;
-        transform: translateY(10px)
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0)
-      }
-    }
-
-    .exp-cname {
-      font-family: var(--fh);
-      font-size: 1.45rem;
-      font-weight: 400;
-      letter-spacing: -.3px;
-    }
-
-    .period-tag {
-      font-family: var(--fm);
-      font-size: .65rem;
-      background: var(--gl);
-      border: 1px solid var(--gb);
-      color: var(--g);
-      padding: 3px 10px;
-      border-radius: 100px;
-      display: inline-block;
-    }
-
-    .exp-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .exp-list li {
-      padding: 3px 0 3px 20px;
-      position: relative;
-      color: var(--mu);
-      font-size: .88rem;
-      line-height: 1.65;
-    }
-
-    .exp-list li::before {
-      content: '↳';
-      position: absolute;
-      left: 0;
-      color: var(--g);
-      font-size: .72rem;
-      top: 7px;
-    }
-
-    .award-box {
-      background: #fffbeb;
-      border: 1px solid #fcd34d;
-      border-radius: 9px;
-      color: #92400e;
-      font-size: .81rem;
-      font-weight: 500;
-    }
-
-    /* PROJECTS */
-    .proj-card {
-      background: #fff;
-      border: 1.5px solid var(--bd) !important;
-      border-radius: 13px !important;
-      transition: all .2s;
-      height: 100%;
-    }
-
-    .proj-card:hover {
-      box-shadow: 0 6px 22px rgba(0, 0, 0, .08) !important;
-      transform: translateY(-3px);
-    }
-
-    .proj-icon {
-      width: 38px;
-      height: 38px;
-      background: var(--bg);
-      border: 1px solid var(--bd);
-      border-radius: 9px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-
-    .proj-tag {
-      font-family: var(--fm);
-      font-size: .61rem;
-      background: var(--gl);
-      border: 1px solid var(--gb);
-      color: var(--g);
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
-
-    .proj-type {
-      font-family: var(--fm);
-      font-size: .61rem;
-      background: var(--bg2);
-      border: 1px solid var(--bd);
-      color: var(--mu);
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
-
-    /* SKILLS */
-    .bar-bg {
-      height: 5px;
-      background: var(--bg2);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--g), #34d399);
-      border-radius: 10px;
-      width: 0;
-      transition: width 1.1s cubic-bezier(.4, 0, .2, 1);
-    }
-
-    .bar-pct {
-      font-family: var(--fm);
-      font-size: .7rem;
-      color: var(--g);
-    }
-
-    .tech-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: var(--bg);
-      border: 1.5px solid var(--bd);
-      color: var(--mu);
-      font-size: .78rem;
-      font-weight: 500;
-      padding: 4px 11px;
-      border-radius: 100px;
-      transition: all .15s;
-    }
-
-    .tech-pill:hover {
-      background: var(--gl);
-      border-color: var(--gb);
-      color: var(--g);
-    }
-
-    .cat-lbl {
-      font-family: var(--fm);
-      font-size: .63rem;
-      color: var(--mu);
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    /* EDUCATION */
-    .edu-card {
-      background: #fff;
-      border: 1.5px solid var(--bd) !important;
-      border-radius: 13px !important;
-      transition: all .15s;
-    }
-
-    .edu-card:hover {
-      box-shadow: 0 4px 14px rgba(0, 0, 0, .06) !important;
-    }
-
-    .edu-yr {
-      font-family: var(--fm);
-      font-size: .65rem;
-      color: var(--g);
-    }
-
-    .cgpa-badge {
-      display: inline-block;
-      background: var(--gl);
-      border: 1px solid var(--gb);
-      color: var(--g);
-      font-family: var(--fm);
-      font-size: .7rem;
-      padding: 3px 9px;
-      border-radius: 6px;
-    }
-
-    .cert-item {
-      background: #fff;
-      border: 1.5px solid var(--bd);
-      border-radius: 9px;
-      transition: all .15s;
-    }
-
-    .cert-item:hover {
-      border-color: #ccc;
-      transform: translateX(3px);
-    }
-
-    /* CONTACT */
-    .cl-item {
-      background: var(--bg);
-      border: 1.5px solid var(--bd);
-      border-radius: 11px;
-      text-decoration: none;
-      color: var(--tx);
-      transition: all .15s;
-    }
-
-    .cl-item:hover {
-      border-color: var(--g);
-      background: var(--gl);
-      transform: translateX(3px);
-      color: var(--tx);
-    }
-
-    .cl-ic {
-      width: 34px;
-      height: 34px;
-      background: #fff;
-      border: 1px solid var(--bd);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: .85rem;
-      flex-shrink: 0;
-    }
-
-    .cta-dark {
-      background: var(--tx);
-      border-radius: 16px;
-    }
-
-    .avail-dot {
-      width: 6px;
-      height: 6px;
-      background: #6ee7b7;
-      border-radius: 50%;
-      animation: blink 2s infinite;
-      display: inline-block;
-    }
-
-    .avail-badge {
-      background: rgba(110, 231, 183, .12);
-      border: 1px solid rgba(110, 231, 183, .25);
-      color: #6ee7b7;
-      font-family: var(--fm);
-      font-size: .7rem;
-      border-radius: 100px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .cta-main {
-      background: #fff;
-      color: var(--tx);
-      border-radius: 9px;
-      font-weight: 600;
-      font-size: .86rem;
-      transition: all .15s;
-    }
-
-    .cta-main:hover {
-      background: var(--g);
-      color: #fff;
-    }
-
-    .cta-ghost {
-      background: transparent;
-      color: rgba(255, 255, 255, .6);
-      border: 1px solid rgba(255, 255, 255, .15);
-      border-radius: 9px;
-      font-size: .86rem;
-      transition: all .15s;
-    }
-
-    .cta-ghost:hover {
-      background: rgba(255, 255, 255, .08);
-      color: #fff;
-    }
-
-    /* WHATSAPP */
-    .wa-float {
-      position: fixed;
-      bottom: 22px;
-      right: 22px;
-      z-index: 999;
-      width: 48px;
-      height: 48px;
-      background: #25d366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, .3);
-      transition: transform .18s;
-    }
-
-    .wa-float:hover {
-      transform: scale(1.1);
-    }
-
-    /* REVEAL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .45s ease, transform .45s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 991px) {
-      #hero {
-        text-align: center;
-      }
-
-      #hero .d-flex.flex-wrap {
-        justify-content: center;
-      }
-
-      .sc-card {
-        margin-top: 24px;
-      }
-    }
-
-    @media (max-width: 767px) {
-      .exp-sidebar-wrap {
-        display: flex !important;
-        flex-wrap: wrap;
-        gap: 7px;
-        border-right: none !important;
-        border-bottom: 1px solid var(--bd);
-        padding-bottom: 12px;
-        margin-bottom: 18px;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -1473,274 +667,108 @@
 
   <!-- ===================== PORTFOLIO CHATBOT ===================== -->
 
-  <!-- Chat Bubble Button -->
-  <div id="chat-bubble" onclick="toggleChat()"
-    style="position:fixed;bottom:82px;right:22px;z-index:1000;width:48px;height:48px;background:var(--g);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 16px rgba(26,107,74,.35);transition:transform .18s;"
-    onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    <svg id="chat-icon-open" width="22" height="22" viewBox="0 0 24 24" fill="white">
-      <path
-        d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
-    </svg>
-    <svg id="chat-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="white" style="display:none">
-      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-    </svg>
-    <span id="chat-notif"
-      style="position:absolute;top:-3px;right:-3px;width:14px;height:14px;background:#ef4444;border-radius:50%;border:2px solid #fff;display:block;"></span>
-  </div>
+<!-- Backdrop -->
+<div id="chat-backdrop" onclick="closeChat()"
+  style="display:none;position:fixed;inset:0;z-index:1001;background:transparent;"></div>
 
-  <!-- Chat Window -->
-  <div id="chat-window"
-    style="position:fixed;bottom:140px;right:22px;z-index:1000;width:340px;max-height:520px;background:#fff;border-radius:18px;box-shadow:0 8px 40px rgba(0,0,0,.15);border:1.5px solid var(--bd);flex-direction:column;overflow:hidden;font-family:var(--fb);">
-    <!-- Header -->
-    <div style="background:var(--g);padding:14px 18px;display:flex;align-items:center;gap:10px;">
-      <div
-        style="width:36px;height:36px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;">
-        🤖</div>
-      <div>
-        <div style="color:#fff;font-weight:600;font-size:.88rem;">Ask Yuvraj's AI</div>
-        <div style="color:rgba(255,255,255,.7);font-size:.7rem;display:flex;align-items:center;gap:4px;"><span
-            style="width:6px;height:6px;background:#6ee7b7;border-radius:50%;display:inline-block;animation:blink 2s infinite;"></span>
-          Always online</div>
+<!-- Chat Bubble -->
+<div id="chat-bubble" onclick="toggleChat()"
+  style="position:fixed;bottom:82px;right:22px;z-index:1003;width:52px;height:52px;background:var(--g);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(26,107,74,.4);transition:transform .2s,box-shadow .2s;font-size:1.5rem;"
+  onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+  <span id="chat-icon-open" style="display:inline-block;animation:robotThink 3s ease-in-out infinite;transform-origin:center bottom;">🤖</span>
+  <svg id="chat-icon-close" width="18" height="18" viewBox="0 0 24 24" fill="white" style="display:none">
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+  </svg>
+  <span id="chat-notif"
+    style="position:absolute;top:0;right:0;width:13px;height:13px;background:#ef4444;border-radius:50%;border:2.5px solid #fff;animation:cb-bounce .8s ease infinite alternate;"></span>
+</div>
+
+<!-- Chat Window -->
+<div id="chat-window"
+  style="position:fixed;bottom:148px;right:22px;z-index:1002;width:320px;max-height:480px;background:#fff;border-radius:20px;box-shadow:0 12px 48px rgba(0,0,0,.18);border:1.5px solid var(--bd);flex-direction:column;overflow:hidden;font-family:var(--fb);">
+
+  <!-- Header -->
+  <div style="background:var(--g);padding:14px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0;">
+    <div style="width:38px;height:38px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0;">🤖</div>
+    <div>
+      <div style="color:#fff;font-weight:600;font-size:.87rem;">Ask Yuvraj's AI</div>
+      <div style="color:rgba(255,255,255,.7);font-size:.7rem;display:flex;align-items:center;gap:5px;margin-top:2px;">
+        <span style="width:6px;height:6px;background:#6ee7b7;border-radius:50%;display:inline-block;animation:blink 2s infinite;"></span>
+        Always online
       </div>
-    </div>
-    <!-- Messages -->
-    <div id="chat-messages"
-      style="flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;max-height:340px;min-height:200px;background:var(--bg);">
-      <div style="display:flex;gap:8px;align-items:flex-end;">
-        <div
-          style="width:26px;height:26px;background:var(--g);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0;">
-          🤖</div>
-        <div
-          style="background:#fff;border:1px solid var(--bd);border-radius:14px 14px 14px 3px;padding:10px 13px;font-size:.82rem;color:var(--tx);line-height:1.6;max-width:250px;box-shadow:0 1px 4px rgba(0,0,0,.05);">
-          Hi! 👋 I'm Yuvraj's portfolio assistant. Ask me anything about his skills, projects, experience, or how to get
-          in touch!
-        </div>
-      </div>
-      <div id="quick-chips" style="display:flex;flex-wrap:wrap;gap:6px;padding-left:34px;">
-        <button onclick="sendQuick('What skills does Yuvraj have?')" class="qchip">Skills</button>
-        <button onclick="sendQuick('Tell me about his projects')" class="qchip">Projects</button>
-        <button onclick="sendQuick('How can I contact Yuvraj?')" class="qchip">Contact</button>
-        <button onclick="sendQuick('What is his work experience?')" class="qchip">Experience</button>
-      </div>
-    </div>
-    <!-- Input -->
-    <div style="padding:12px;border-top:1px solid var(--bd);background:#fff;display:flex;gap:8px;align-items:center;">
-      <input id="chat-input" type="text" placeholder="Ask something..." onkeydown="if(event.key==='Enter')sendMsg()"
-        style="flex:1;border:1.5px solid var(--bd);border-radius:100px;padding:8px 14px;font-size:.82rem;outline:none;font-family:var(--fb);color:var(--tx);background:var(--bg);transition:border-color .15s;"
-        onfocus="this.style.borderColor='var(--g)'" onblur="this.style.borderColor='var(--bd)'" />
-      <button onclick="sendMsg()"
-        style="width:36px;height:36px;background:var(--g);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;flex-shrink:0;"
-        onmouseover="this.style.background='#145a3c'" onmouseout="this.style.background='var(--g)'">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
-        </svg>
-      </button>
     </div>
   </div>
 
-  <style>
-    .qchip {
-      background: #fff;
-      border: 1px solid var(--bd);
-      color: var(--mu);
-      font-size: .7rem;
-      padding: 4px 10px;
-      border-radius: 100px;
-      cursor: pointer;
-      font-family: var(--fb);
-      transition: all .15s;
-    }
-
-    .qchip:hover {
-      background: var(--gl);
-      border-color: var(--gb);
-      color: var(--g);
-    }
-
-    #chat-window {
-      display: none;
-    }
-
-    #chat-window.open {
-      display: flex !important;
-      animation: chatSlide .25s cubic-bezier(.4, 0, .2, 1);
-    }
-
-    @keyframes chatSlide {
-      from {
-        opacity: 0;
-        transform: translateY(16px) scale(.97)
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1)
-      }
-    }
-
-    .typing-dot {
-      width: 7px;
-      height: 7px;
-      background: var(--mu);
-      border-radius: 50%;
-      animation: typingBounce 1.2s infinite;
-      display: inline-block;
-    }
-
-    .typing-dot:nth-child(2) {
-      animation-delay: .2s
-    }
-
-    .typing-dot:nth-child(3) {
-      animation-delay: .4s
-    }
-
-    @keyframes typingBounce {
-
-      0%,
-      60%,
-      100% {
-        transform: translateY(0)
-      }
-
-      30% {
-        transform: translateY(-6px)
-      }
-    }
-  </style>
-
-<script>
-  const chatWindow = document.getElementById("chat-window");
-
-  function toggleChat() {
-    chatWindow.classList.toggle("open");
-  }
-
-  async function sendMsg() {
-    const input = document.getElementById("chat-input");
-    const messages = document.getElementById("chat-messages");
-
-    const message = input.value.trim();
-
-    if (!message) return;
-
-    // USER MESSAGE
-    messages.innerHTML += `
-      <div style="display:flex;justify-content:flex-end;margin-top:8px;">
-        <div style="background:var(--g);color:white;padding:10px 14px;border-radius:14px;max-width:240px;">
-          ${message}
-        </div>
+  <!-- Messages -->
+  <div id="chat-messages"
+    style="flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;max-height:280px;background:var(--bg);">
+    <div style="display:flex;gap:8px;align-items:flex-end;">
+      <div class="bot-av-wrap">
+        <div class="bot-av">🤖</div>
       </div>
-    `;
-
-    input.value = "";
-
-    messages.scrollTop = messages.scrollHeight;
-
-    // TYPING
-    const typingId = "typing-" + Date.now();
-
-    messages.innerHTML += `
-      <div id="${typingId}" style="margin-top:8px;">
-        <div style="background:white;padding:10px 14px;border-radius:14px;border:1px solid #ddd;width:70px;">
-          Typing...
-        </div>
+      <div style="background:#fff;border:1px solid var(--bd);border-radius:16px 16px 16px 4px;padding:9px 12px;font-size:.81rem;color:var(--tx);line-height:1.55;max-width:220px;box-shadow:0 1px 3px rgba(0,0,0,.06);">
+        Hi! 👋 I'm Yuvraj's portfolio assistant. Ask me anything about his skills, projects, experience, or how to get in touch!
       </div>
-    `;
+    </div>
+    <div id="quick-chips" style="display:flex;flex-wrap:wrap;gap:5px;padding-left:34px;">
+      <button onclick="sendQuick('What skills does Yuvraj have?')" class="qchip">Skills</button>
+      <button onclick="sendQuick('Tell me about his projects')" class="qchip">Projects</button>
+      <button onclick="sendQuick('How can I contact Yuvraj?')" class="qchip">Contact</button>
+      <button onclick="sendQuick('What is his work experience?')" class="qchip">Experience</button>
+    </div>
+  </div>
 
-    messages.scrollTop = messages.scrollHeight;
+  <!-- Input -->
+  <div style="padding:10px 12px;border-top:1px solid var(--bd);background:#fff;display:flex;gap:8px;align-items:center;flex-shrink:0;">
+    <input id="chat-input" type="text" placeholder="Ask something..."
+      onkeydown="if(event.key==='Enter')sendMsg()"
+      style="flex:1;border:1.5px solid var(--bd);border-radius:100px;padding:8px 14px;font-size:.81rem;outline:none;font-family:var(--fb);color:var(--tx);background:var(--bg);transition:border-color .15s;"
+      onfocus="this.style.borderColor='var(--g)'"
+      onblur="this.style.borderColor='var(--bd)'"/>
+    <button onclick="sendMsg()"
+      style="width:34px;height:34px;background:var(--g);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .15s,transform .1s;"
+      onmouseover="this.style.background='#145a3c'"
+      onmouseout="this.style.background='var(--g)'"
+      onmousedown="this.style.transform='scale(.92)'"
+      onmouseup="this.style.transform='scale(1)'">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="white">
+        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+      </svg>
+    </button>
+  </div>
+</div>
 
-    try {
 
-      // SEND TO DJANGO BACKEND
-      const response = await fetch("/chatbot/", {
-        method: "POST",
 
-        headers: {
-          "Content-Type": "application/json",
-          "X-CSRFToken": getCookie("csrftoken")
-        },
 
-        body: JSON.stringify({
-          message: message
-        })
-      });
 
-      const data = await response.json();
 
-      // REMOVE TYPING
-      document.getElementById(typingId).remove();
 
-      // BOT MESSAGE
-      messages.innerHTML += `
-        <div style="display:flex;margin-top:8px;">
-          <div style="background:white;padding:10px 14px;border-radius:14px;border:1px solid #ddd;max-width:240px;">
-            ${data.reply}
-          </div>
-        </div>
-      `;
 
-      messages.scrollTop = messages.scrollHeight;
-
-    } catch (error) {
-
-      document.getElementById(typingId).remove();
-
-      messages.innerHTML += `
-        <div style="color:red;margin-top:8px;">
-          Server Error
-        </div>
-      `;
-    }
-  }
-
-  // CSRF TOKEN FOR DJANGO
-  function getCookie(name) {
-    let cookieValue = null;
-
-    if (document.cookie && document.cookie !== "") {
-
-      const cookies = document.cookie.split(";");
-
-      for (let i = 0; i < cookies.length; i++) {
-
-        const cookie = cookies[i].trim();
-
-        if (cookie.substring(0, name.length + 1) === (name + "=")) {
-
-          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-
-          break;
-        }
-      }
-    }
-
-    return cookieValue;
-  }
-</script>
-
+  <script src="{% static 'assets/js/chat_bot.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.querySelectorAll('.exp-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.exp-tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById('panel-' + tab.dataset.panel).classList.add('active');
-      });
-    });
-    const ro = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
-    const bo = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting)
-          e.target.querySelectorAll('.bar-fill').forEach(b => b.style.width = b.dataset.w + '%');
-      });
-    }, { threshold: 0.3 });
-    document.querySelectorAll('.skill-bars-wrap').forEach(el => bo.observe(el));
-  </script>
+<!--  <script>-->
+<!--    document.querySelectorAll('.exp-tab').forEach(tab => {-->
+<!--      tab.addEventListener('click', () => {-->
+<!--        document.querySelectorAll('.exp-tab').forEach(t => t.classList.remove('active'));-->
+<!--        document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));-->
+<!--        tab.classList.add('active');-->
+<!--        document.getElementById('panel-' + tab.dataset.panel).classList.add('active');-->
+<!--      });-->
+<!--    });-->
+<!--    const ro = new IntersectionObserver(entries => {-->
+<!--      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });-->
+<!--    }, { threshold: 0.1 });-->
+<!--    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));-->
+<!--    const bo = new IntersectionObserver(entries => {-->
+<!--      entries.forEach(e => {-->
+<!--        if (e.isIntersecting)-->
+<!--          e.target.querySelectorAll('.bar-fill').forEach(b => b.style.width = b.dataset.w + '%');-->
+<!--      });-->
+<!--    }, { threshold: 0.3 });-->
+<!--    document.querySelectorAll('.skill-bars-wrap').forEach(el => bo.observe(el));-->
+<!--  </script>-->
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZRRP72Z1WF"></script>
