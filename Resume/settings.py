@@ -30,7 +30,7 @@ DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS = ['soniyuvraj.in', 'www.soniyuvraj.in' ,'localhost']
 
-
+AUTH_USER_MODEL = 'app.CustomUser'
 # Application definition
 
 INSTALLED_APPS = [

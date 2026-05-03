@@ -1,4 +1,6 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import JsonResponse, HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import EmailMessage
@@ -7,7 +9,12 @@ from dotenv import load_dotenv
 import json
 import requests
 import os
+from django.contrib.auth import authenticate, login, logout
 
+from app.models import ChatBot
+
+
+# from langchain_community.tools.amadeus.utils import authenticate
 
 
 def index(request):
@@ -18,7 +25,30 @@ def index(request):
     return render(request, 'home.html')
 
 
+@login_required()
+def admin_dashboard(request):
+    return render(request, 'admin_side/admin_dashboard.html')
 
+def admin_login(request):
+    try:
+        if request.method == "POST":
+            username = request.POST.get("username")
+            password = request.POST.get("password")
+            print(username)
+            print(password)
+
+            try:
+                user =  authenticate(request,username=username,password=password)
+                if user is not None:
+                    login(request, user)
+                    return redirect('admin_dashboard')
+                else:
+                    return redirect('admin_login')
+            except Exception as e:
+                print("except",e)
+    except Exception as e:
+        print("Error")
+    return render(request, 'admin_side/admin_login.html')
 API_URL =  os.getenv("API_URL")
 
 HEADERS = {
@@ -95,6 +125,8 @@ def chatbot(request):
                 request.session["name"] = user_message
 
                 print("NAME:", request.session["name"])
+                chat = ChatBot.objects.create(name=request.session["name"])
+                chat.save()
 
                 request.session["step"] = "chat"
 
@@ -147,68 +179,68 @@ def chatbot(request):
 
 
 
-def Datasent(request):
-
-    if request.method == 'POST':
-
-        name = request.POST.get('name')
-
-        email = request.POST.get('email')
-
-        subject = request.POST.get('subject')
-
-        message = request.POST.get('message')
-
-
-        email_message = EmailMessage(
-
-            'USER DATA SUBMISSION',
-
-            f'''
-            Name: {name}
-
-            Subject: {subject}
-
-            Email: {email}
-
-            Message: {message}
-            ''',
-
-            settings.DEFAULT_FROM_EMAIL,
-
-            ['yuvrajsoni9192@gmail.com'],
-
-            headers={
-                'Reply-To': email
-            }
-
-        )
-
-
-        email_message.send(
-            fail_silently=False
-        )
-
-
-        return render(
-            request,
-            'thankyou.html',
-            {
-                'name': name
-            }
-        )
-
-
-    return HttpResponseRedirect('/')
-
-
-# =========================
-# CERTIFICATIONS PAGE
-# =========================
-
-def certification(request):
-
-    return render(
-        request,
-        'certifications.html'
-    )
+# def Datasent(request):
+#
+#     if request.method == 'POST':
+#
+#         name = request.POST.get('name')
+#
+#         email = request.POST.get('email')
+#
+#         subject = request.POST.get('subject')
+#
+#         message = request.POST.get('message')
+#
+#
+#         email_message = EmailMessage(
+#
+#             'USER DATA SUBMISSION',
+#
+#             f'''
+#             Name: {name}
+#
+#             Subject: {subject}
+#
+#             Email: {email}
+#
+#             Message: {message}
+#             ''',
+#
+#             settings.DEFAULT_FROM_EMAIL,
+#
+#             ['yuvrajsoni9192@gmail.com'],
+#
+#             headers={
+#                 'Reply-To': email
+#             }
+#
+#         )
+#
+#
+#         email_message.send(
+#             fail_silently=False
+#         )
+#
+#
+#         return render(
+#             request,
+#             'thankyou.html',
+#             {
+#                 'name': name
+#             }
+#         )
+#
+#
+#     return HttpResponseRedirect('/')
+#
+#
+# # =========================
+# # CERTIFICATIONS PAGE
+# # =========================
+#
+# def certification(request):
+#
+#     return render(
+#         request,
+#         'certifications.html'
+#     )
