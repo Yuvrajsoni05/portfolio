@@ -11,7 +11,7 @@ import requests
 import os
 from django.contrib.auth import authenticate, login, logout
 
-from app.models import ChatBot
+from app.models import ChatBot, MyContext
 
 
 # from langchain_community.tools.amadeus.utils import authenticate
@@ -27,7 +27,12 @@ def index(request):
 
 @login_required()
 def admin_dashboard(request):
-    return render(request, 'admin_side/admin_dashboard.html')
+    my_context = MyContext.objects.all()
+
+    context = {
+        'contexts': my_context
+    }
+    return render(request, 'admin_side/admin_dashboard.html',context=context)
 
 def admin_login(request):
     try:
@@ -107,32 +112,23 @@ def chatbot(request):
                     "reply": "Please enter a message."
                 })
 
-            if "step" not in request.session:
-                request.session["step"] = "ask_name"
-
-            step = request.session["step"]
-
-            if step == "ask_name":
-
-                request.session["step"] = "get_name"
-
-                return JsonResponse({
-                    "reply": "What is your name?"
-                })
-
-            elif step == "get_name":
-
-                request.session["name"] = user_message
-
-                print("NAME:", request.session["name"])
-                chat = ChatBot.objects.create(name=request.session["name"])
-                chat.save()
-
-                request.session["step"] = "chat"
-
-                return JsonResponse({
-                    "reply": f"Hello {user_message}, you are connected."
-                })
+            # if "step" not in request.session:
+            #     request.session["step"] = "ask_name"
+            #
+            # step = request.session["step"]
+            #     })
+            #
+            # elif step == "get_name":
+            #     request.session["name"] = user_message
+            #     print("NAME:", request.session["name"])
+            #     chat = ChatBot.objects.create(name=request.session["name"])
+            #     chat.save()
+            #
+            #     request.session["step"] = "chat"
+            #
+            #     return JsonResponse({
+            #         "reply": f"Hello {user_message}, you are connected."
+            #     })
             # AI Request
             response = requests.post(
                 API_URL,
@@ -143,11 +139,31 @@ def chatbot(request):
                         {
                             "role": "system",
                             "content": f"""
-                            You are Yuvraj Soni's AI assistant.
-                            Use the resume context below to answer questions professionally.
-                            Resume Context:
-                            {resume_context}
-                            """
+You are an AI assistant representing Yuvraj Soni.
+
+Provide answers that are:
+- Short
+- Simple
+- Professional
+
+Formatting rules:
+- Do NOT use asterisks (*) or any bold/markdown formatting
+- Do NOT add unnecessary headings like Greetings or Introduction
+- Keep responses clean and natural
+- Use numbered points only when needed
+- Keep each point short (1 line)
+
+For normal questions, reply in 1–2 simple lines.
+For lists, use this format:
+1. Keyword: Short explanation
+
+Avoid long paragraphs and over-formatting.
+
+If a question goes beyond the resume context, respond briefly without making unsupported claims.
+
+Resume Context:
+{resume_context}
+"""
                         },
                         {
                             "role": "user",
@@ -176,7 +192,23 @@ def chatbot(request):
         "error": "Invalid request"
     })
 
+def create_context(request):
+    if request.method == "POST":
+        title = request.POST.get("title")
+        context = request.POST.get("context")
 
+        print("This is Title",title)
+        context_create = MyContext.objects.create(
+            title = title,
+            content = context
+
+        )
+        context_create.save()
+        return redirect('admin_dashboard')
+
+    else:
+        print("error")
+        return redirect('admin_dashboard')
 
 
 # def Datasent(request):
