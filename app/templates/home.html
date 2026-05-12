@@ -48,7 +48,7 @@
       <div class="row align-items-center g-5">
         <div class="col-lg-7">
           <div class="status-badge mb-4"><span class="status-dot"></span> Available for new opportunities</div>
-          <h1 class="hero-name mb-3">Python &amp;<br><em>Django</em><br>Developer</h1>
+          <h1 class="hero-name mb-3">Python &amp; &nbsp;<em>Django</em><br>Developer</h1>
           <p class="mb-4" style="color:var(--mu);max-width:460px;line-height:1.8;font-size:.98rem">
             Hi, I'm <strong style="color:var(--tx)">Yuvraj Champaneri</strong> — building scalable web apps, automating
             workflows with <strong style="color:var(--tx)">n8n &amp; AI</strong>, and crafting <strong
@@ -671,13 +671,35 @@
 <div id="chat-backdrop" onclick="closeChat()"
   style="display:none;position:fixed;inset:0;z-index:1001;background:transparent;"></div>
 
+<!-- Teaser Pop -->
+<div id="chat-teaser"
+  style="position:fixed;bottom:148px;right:22px;z-index:1002;animation:slideIn .35s cubic-bezier(.22,1,.36,1) both;transform-origin:bottom right;">
+  <div
+    style="background:#fff;border:1px solid var(--bd);border-radius:16px 16px 4px 16px;padding:10px 14px 10px 12px;display:flex;align-items:center;gap:10px;box-shadow:0 4px 18px rgba(0,0,0,.10);max-width:220px;">
+    <div
+      style="width:32px;height:32px;background:#e8f5ee;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;animation:robotThink 3s ease-in-out infinite;transform-origin:center bottom;">
+      🤖</div>
+    <div style="flex:1;">
+      <p style="margin:0;font-size:12px;font-weight:600;color:var(--tx);line-height:1.4;">Have a question for Yuvraj?</p>
+      <p style="margin:2px 0 0;font-size:11px;color:#64748b;line-height:1.4;">I'm his AI — ask me anything! 👋</p>
+    </div>
+    <span onclick="document.getElementById('chat-teaser').style.display='none'"
+      style="flex-shrink:0;font-size:13px;color:#94a3b8;cursor:pointer;align-self:flex-start;line-height:1;padding:2px;">✕</span>
+  </div>
+  <!-- Tail pointing down toward bubble -->
+  <div
+    style="position:absolute;bottom:-6px;right:22px;width:12px;height:12px;background:#fff;border-right:1px solid var(--bd);border-bottom:1px solid var(--bd);transform:rotate(45deg);">
+  </div>
+</div>
+
 <!-- Chat Bubble -->
 <div id="chat-bubble" onclick="toggleChat()"
   style="position:fixed;bottom:82px;right:22px;z-index:1003;width:52px;height:52px;background:var(--g);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(26,107,74,.4);transition:transform .2s,box-shadow .2s;font-size:1.5rem;"
   onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-  <span id="chat-icon-open" style="display:inline-block;animation:robotThink 3s ease-in-out infinite;transform-origin:center bottom;">🤖</span>
+  <span id="chat-icon-open"
+    style="display:inline-block;animation:robotThink 3s ease-in-out infinite;transform-origin:center bottom;">🤖</span>
   <svg id="chat-icon-close" width="18" height="18" viewBox="0 0 24 24" fill="white" style="display:none">
-    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
   </svg>
   <span id="chat-notif"
     style="position:absolute;top:0;right:0;width:13px;height:13px;background:#ef4444;border-radius:50%;border:2.5px solid #fff;animation:cb-bounce .8s ease infinite alternate;"></span>
@@ -689,11 +711,14 @@
 
   <!-- Header -->
   <div style="background:var(--g);padding:14px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0;">
-    <div style="width:38px;height:38px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0;">🤖</div>
+    <div
+      style="width:38px;height:38px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0;">
+      🤖</div>
     <div>
       <div style="color:#fff;font-weight:600;font-size:.87rem;">Ask Yuvraj's AI</div>
       <div style="color:rgba(255,255,255,.7);font-size:.7rem;display:flex;align-items:center;gap:5px;margin-top:2px;">
-        <span style="width:6px;height:6px;background:#6ee7b7;border-radius:50%;display:inline-block;animation:blink 2s infinite;"></span>
+        <span
+          style="width:6px;height:6px;background:#6ee7b7;border-radius:50%;display:inline-block;animation:blink 2s infinite;"></span>
         Always online
       </div>
     </div>
@@ -706,8 +731,10 @@
       <div class="bot-av-wrap">
         <div class="bot-av">🤖</div>
       </div>
-      <div style="background:#fff;border:1px solid var(--bd);border-radius:16px 16px 16px 4px;padding:9px 12px;font-size:.81rem;color:var(--tx);line-height:1.55;max-width:220px;box-shadow:0 1px 3px rgba(0,0,0,.06);">
-        Hi! 👋 I'm Yuvraj's portfolio assistant. Ask me anything about his skills, projects, experience, or how to get in touch!
+      <div
+        style="background:#fff;border:1px solid var(--bd);border-radius:16px 16px 16px 4px;padding:9px 12px;font-size:.81rem;color:var(--tx);line-height:1.55;max-width:220px;box-shadow:0 1px 3px rgba(0,0,0,.06);">
+        Hi! 👋 I'm Yuvraj's portfolio assistant. Ask me anything about his skills, projects, experience, or how to get
+        in touch!
       </div>
     </div>
     <div id="quick-chips" style="display:flex;flex-wrap:wrap;gap:5px;padding-left:34px;">
@@ -719,20 +746,17 @@
   </div>
 
   <!-- Input -->
-  <div style="padding:10px 12px;border-top:1px solid var(--bd);background:#fff;display:flex;gap:8px;align-items:center;flex-shrink:0;">
-    <input id="chat-input" type="text" placeholder="Ask something..."
-      onkeydown="if(event.key==='Enter')sendMsg()"
+  <div
+    style="padding:10px 12px;border-top:1px solid var(--bd);background:#fff;display:flex;gap:8px;align-items:center;flex-shrink:0;">
+    <input id="chat-input" type="text" placeholder="Ask something..." onkeydown="if(event.key==='Enter')sendMsg()"
       style="flex:1;border:1.5px solid var(--bd);border-radius:100px;padding:8px 14px;font-size:.81rem;outline:none;font-family:var(--fb);color:var(--tx);background:var(--bg);transition:border-color .15s;"
-      onfocus="this.style.borderColor='var(--g)'"
-      onblur="this.style.borderColor='var(--bd)'"/>
+      onfocus="this.style.borderColor='var(--g)'" onblur="this.style.borderColor='var(--bd)'" />
     <button onclick="sendMsg()"
       style="width:34px;height:34px;background:var(--g);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .15s,transform .1s;"
-      onmouseover="this.style.background='#145a3c'"
-      onmouseout="this.style.background='var(--g)'"
-      onmousedown="this.style.transform='scale(.92)'"
-      onmouseup="this.style.transform='scale(1)'">
+      onmouseover="this.style.background='#145a3c'" onmouseout="this.style.background='var(--g)'"
+      onmousedown="this.style.transform='scale(.92)'" onmouseup="this.style.transform='scale(1)'">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="white">
-        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
       </svg>
     </button>
   </div>
@@ -744,31 +768,30 @@
 
 
 
-
   <script src="{% static 'assets/js/chat_bot.js' %}"></script>
   <script src="{% static 'assets/js/main.js' %}"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<!--  <script>-->
-<!--    document.querySelectorAll('.exp-tab').forEach(tab => {-->
-<!--      tab.addEventListener('click', () => {-->
-<!--        document.querySelectorAll('.exp-tab').forEach(t => t.classList.remove('active'));-->
-<!--        document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));-->
-<!--        tab.classList.add('active');-->
-<!--        document.getElementById('panel-' + tab.dataset.panel).classList.add('active');-->
-<!--      });-->
-<!--    });-->
-<!--    const ro = new IntersectionObserver(entries => {-->
-<!--      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });-->
-<!--    }, { threshold: 0.1 });-->
-<!--    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));-->
-<!--    const bo = new IntersectionObserver(entries => {-->
-<!--      entries.forEach(e => {-->
-<!--        if (e.isIntersecting)-->
-<!--          e.target.querySelectorAll('.bar-fill').forEach(b => b.style.width = b.dataset.w + '%');-->
-<!--      });-->
-<!--    }, { threshold: 0.3 });-->
-<!--    document.querySelectorAll('.skill-bars-wrap').forEach(el => bo.observe(el));-->
-<!--  </script>-->
+  <!--  <script>-->
+  <!--    document.querySelectorAll('.exp-tab').forEach(tab => {-->
+  <!--      tab.addEventListener('click', () => {-->
+  <!--        document.querySelectorAll('.exp-tab').forEach(t => t.classList.remove('active'));-->
+  <!--        document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));-->
+  <!--        tab.classList.add('active');-->
+  <!--        document.getElementById('panel-' + tab.dataset.panel).classList.add('active');-->
+  <!--      });-->
+  <!--    });-->
+  <!--    const ro = new IntersectionObserver(entries => {-->
+  <!--      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });-->
+  <!--    }, { threshold: 0.1 });-->
+  <!--    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));-->
+  <!--    const bo = new IntersectionObserver(entries => {-->
+  <!--      entries.forEach(e => {-->
+  <!--        if (e.isIntersecting)-->
+  <!--          e.target.querySelectorAll('.bar-fill').forEach(b => b.style.width = b.dataset.w + '%');-->
+  <!--      });-->
+  <!--    }, { threshold: 0.3 });-->
+  <!--    document.querySelectorAll('.skill-bars-wrap').forEach(el => bo.observe(el));-->
+  <!--  </script>-->
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZRRP72Z1WF"></script>

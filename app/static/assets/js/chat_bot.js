@@ -11,6 +11,10 @@ function toggleChat() {
 
 function openChat() {
   isOpen = true;
+  // Hide teaser pop when chat opens
+  const teaser = document.getElementById('chat-teaser');
+  if (teaser) teaser.style.display = 'none';
+
   chatWindow.classList.add('open');
   chatBackdrop.style.display = 'block';
   iconOpen.style.display = 'none';
@@ -111,3 +115,14 @@ function getCookie(name) {
   }
   return value;
 }
+
+// Auto-hide teaser after 6 seconds
+setTimeout(() => {
+  const teaser = document.getElementById('chat-teaser');
+  if (teaser) {
+    teaser.style.transition = 'opacity .4s, transform .4s';
+    teaser.style.opacity = '0';
+    teaser.style.transform = 'translateY(8px) scale(.96)';
+    setTimeout(() => teaser.style.display = 'none', 400);
+  }
+}, 6000);
