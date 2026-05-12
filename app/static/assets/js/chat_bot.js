@@ -11,10 +11,13 @@ function toggleChat() {
 
 function openChat() {
   isOpen = true;
-  // Hide teaser pop when chat opens
   const teaser = document.getElementById('chat-teaser');
-  if (teaser) teaser.style.display = 'none';
-
+  if (teaser) {
+    teaser.style.transition = 'opacity .4s ease, transform .4s ease';
+    teaser.style.opacity = '0';
+    teaser.style.transform = 'translateY(10px) scale(.96)';
+    setTimeout(() => teaser.style.display = 'none', 400);
+  }
   chatWindow.classList.add('open');
   chatBackdrop.style.display = 'block';
   iconOpen.style.display = 'none';
@@ -116,13 +119,29 @@ function getCookie(name) {
   return value;
 }
 
-// Auto-hide teaser after 6 seconds
+// Show teaser smoothly after 1.5s, then auto-hide after 7s
 setTimeout(() => {
   const teaser = document.getElementById('chat-teaser');
-  if (teaser) {
-    teaser.style.transition = 'opacity .4s, transform .4s';
+  if (!teaser || isOpen) return;
+
+  // Slide in
+  teaser.style.display = 'block';
+  teaser.style.opacity = '0';
+  teaser.style.transform = 'translateY(12px) scale(.94)';
+  teaser.style.transition = 'opacity .5s cubic-bezier(.22,1,.36,1), transform .5s cubic-bezier(.22,1,.36,1)';
+
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    teaser.style.opacity = '1';
+    teaser.style.transform = 'translateY(0) scale(1)';
+  }));
+
+  // Auto-hide after 7s
+  setTimeout(() => {
+    if (isOpen) return;
+    teaser.style.transition = 'opacity .5s ease, transform .5s ease';
     teaser.style.opacity = '0';
-    teaser.style.transform = 'translateY(8px) scale(.96)';
-    setTimeout(() => teaser.style.display = 'none', 400);
-  }
-}, 6000);
+    teaser.style.transform = 'translateY(10px) scale(.96)';
+    setTimeout(() => teaser.style.display = 'none', 500);
+  }, 700000);
+
+}, 1500);
