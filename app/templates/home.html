@@ -1,807 +1,2058 @@
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Yuvraj Champaneri — Python & Django Developer</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yuvraj Champaneri — Python & Django Developer</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet" />
+        <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+    </head>
 
-  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <body>
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg sticky-top py-2 shadow-none">
+            <div class="container">
+                <a class="navbar-brand" href="#hero"
+                    >Yuvraj <span>Champaneri</span></a
+                >
+                <button
+                    class="navbar-toggler border-0"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navMain"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navMain">
+                    <ul
+                        class="navbar-nav ms-auto align-items-lg-center gap-1 py-2 py-lg-0"
+                    >
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#n8n-creator">n8n</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#experience"
+                                >Experience</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#education">Education</a>
+                        </li>
+                        <li class="nav-item ms-lg-1">
+                            <a
+                                class="btn-dl"
+                                href="{% static 'assets/Resume.pdf' %}"
+                                download
+                                ><i class="bi bi-download"></i> Resume</a
+                            >
+                        </li>
+                        <li class="nav-item ms-lg-1">
+                            <a class="nav-link btn-hire" href="#contact"
+                                >Hire Me</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
+        <!-- HERO -->
+        <section id="hero">
+            <div class="container py-5" style="position: relative; z-index: 1">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-7">
+                        <div class="status-badge mb-4">
+                            <span class="status-dot"></span> Available for new
+                            opportunities
+                        </div>
+                        <h1 class="hero-name mb-3">
+                            Python &amp; &nbsp;<em>Django</em><br />Developer
+                        </h1>
+                        <p
+                            class="mb-4"
+                            style="
+                                color: var(--mu);
+                                max-width: 460px;
+                                line-height: 1.8;
+                                font-size: 0.98rem;
+                            "
+                        >
+                            Hi, I'm
+                            <strong style="color: var(--tx)"
+                                >Yuvraj Champaneri</strong
+                            >
+                            — building scalable web apps, automating workflows
+                            with
+                            <strong style="color: var(--tx)"
+                                >n8n &amp; AI</strong
+                            >, and crafting
+                            <strong style="color: var(--tx)"
+                                >Power BI dashboards</strong
+                            >. Based in Ahmedabad.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="chip">🐍 Django / Python</span>
+                            <span class="chip">⚡ n8n Automation</span>
+                            <span class="chip">🤖 AI Chatbots</span>
+                            <span class="chip">📊 Power BI</span>
+                        </div>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a
+                                href="#projects"
+                                class="btn btn-dark px-4 py-2 rounded-3 fw-semibold"
+                                >See My Work →</a
+                            >
+                            <a
+                                class="btn-dl"
+                                href="{% static 'assets/Resume.pdf' %}"
+                                download
+                                ><i class="bi bi-download"></i> Resume</a
+                            >
+                            <a
+                                href="#contact"
+                                class="btn px-4 py-2 rounded-3 fw-medium"
+                                style="
+                                    background: #fff;
+                                    border: 1.5px solid var(--bd);
+                                    color: var(--mu);
+                                "
+                                >Get in Touch</a
+                            >
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="sc-card p-4">
+                            <div
+                                class="d-flex align-items-center justify-content-between pb-3 mb-3"
+                                style="border-bottom: 1px solid var(--bd)"
+                            >
+                                <span
+                                    style="
+                                        font-family: var(--fm);
+                                        font-size: 0.64rem;
+                                        letter-spacing: 0.1em;
+                                        text-transform: uppercase;
+                                        color: var(--mu);
+                                    "
+                                    >What I Build</span
+                                >
+                                <div class="d-flex gap-1">
+                                    <span class="dot-r"></span
+                                    ><span class="dot-y"></span
+                                    ><span class="dot-g"></span>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column gap-2 mb-3">
+                                <div class="svc-row">
+                                    <div class="svc-em">🐍</div>
+                                    <div class="flex-grow-1">
+                                        <div
+                                            class="fw-semibold"
+                                            style="font-size: 0.85rem"
+                                        >
+                                            Django Web Apps
+                                        </div>
+                                        <div
+                                            style="
+                                                font-size: 0.72rem;
+                                                color: var(--mu);
+                                            "
+                                        >
+                                            Scalable backends &amp; admin
+                                            systems
+                                        </div>
+                                    </div>
+                                    <span class="svc-badge">Python</span>
+                                </div>
+                                <div class="svc-row">
+                                    <div class="svc-em">⚡</div>
+                                    <div class="flex-grow-1">
+                                        <div
+                                            class="fw-semibold"
+                                            style="font-size: 0.85rem"
+                                        >
+                                            n8n Automation
+                                        </div>
+                                        <div
+                                            style="
+                                                font-size: 0.72rem;
+                                                color: var(--mu);
+                                            "
+                                        >
+                                            Workflow &amp; business automation
+                                        </div>
+                                    </div>
+                                    <span class="svc-badge">No-code</span>
+                                </div>
+                                <div class="svc-row">
+                                    <div class="svc-em">🤖</div>
+                                    <div class="flex-grow-1">
+                                        <div
+                                            class="fw-semibold"
+                                            style="font-size: 0.85rem"
+                                        >
+                                            AI Chatbots
+                                        </div>
+                                        <div
+                                            style="
+                                                font-size: 0.72rem;
+                                                color: var(--mu);
+                                            "
+                                        >
+                                            Smart customer support bots
+                                        </div>
+                                    </div>
+                                    <span class="svc-badge">AI</span>
+                                </div>
+                                <div class="svc-row">
+                                    <div class="svc-em">📊</div>
+                                    <div class="flex-grow-1">
+                                        <div
+                                            class="fw-semibold"
+                                            style="font-size: 0.85rem"
+                                        >
+                                            Power BI Dashboards
+                                        </div>
+                                        <div
+                                            style="
+                                                font-size: 0.72rem;
+                                                color: var(--mu);
+                                            "
+                                        >
+                                            Interactive data visualizations
+                                        </div>
+                                    </div>
+                                    <span class="svc-badge">Analytics</span>
+                                </div>
+                            </div>
+                            <div class="row g-2">
+                                <div class="col-4">
+                                    <a
+                                        href="https://github.com/Yuvrajsoni05"
+                                        target="_blank"
+                                        class="soc-btn"
+                                        ><i class="bi bi-github"></i> GitHub</a
+                                    >
+                                </div>
+                                <div class="col-4">
+                                    <a
+                                        href="https://www.linkedin.com/in/yuvraj-champaneri-2678a7248/"
+                                        target="_blank"
+                                        class="soc-btn"
+                                        ><i class="bi bi-linkedin"></i>
+                                        LinkedIn</a
+                                    >
+                                </div>
+                                <div class="col-4">
+                                    <a
+                                        href="mailto:soniyuvraj9499@gmail.com"
+                                        class="soc-btn"
+                                        ><i class="bi bi-envelope"></i> Email</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-</head>
+        <!-- SERVICES -->
+        <section id="services" class="py-5" style="background: #fff">
+            <div class="container py-4">
+                <div class="sec-label mb-2">What I Do</div>
+                <h2 class="sec-title mb-5">My Core Services</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="sv-card card border-0 p-4">
+                            <div class="sv-icon ic-g mb-3">🐍</div>
+                            <h6 class="fw-bold mb-2">Django Web Development</h6>
+                            <p
+                                class="mb-3"
+                                style="
+                                    font-size: 0.83rem;
+                                    color: var(--mu);
+                                    line-height: 1.7;
+                                "
+                            >
+                                Scalable backends, REST APIs, and admin panels —
+                                clean and production-ready.
+                            </p>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="tmono">Django</span
+                                ><span class="tmono">Python</span
+                                ><span class="tmono">REST API</span
+                                ><span class="tmono">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="sv-card card border-0 p-4">
+                            <div class="sv-icon ic-o mb-3">⚡</div>
+                            <h6 class="fw-bold mb-2">
+                                n8n Workflow Automation
+                            </h6>
+                            <p
+                                class="mb-3"
+                                style="
+                                    font-size: 0.83rem;
+                                    color: var(--mu);
+                                    line-height: 1.7;
+                                "
+                            >
+                                Automation pipelines for email marketing, lead
+                                generation, and API integrations.
+                            </p>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="tmono">n8n</span
+                                ><span class="tmono">Workflow</span
+                                ><span class="tmono">API</span
+                                ><span class="tmono">Lead Gen</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="sv-card card border-0 p-4">
+                            <div class="sv-icon ic-i mb-3">🤖</div>
+                            <h6 class="fw-bold mb-2">AI Chatbot Development</h6>
+                            <p
+                                class="mb-3"
+                                style="
+                                    font-size: 0.83rem;
+                                    color: var(--mu);
+                                    line-height: 1.7;
+                                "
+                            >
+                                AI-powered bots for HR assistance, customer
+                                support, and FAQ automation.
+                            </p>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="tmono">AI</span
+                                ><span class="tmono">Chatbot</span
+                                ><span class="tmono">n8n</span
+                                ><span class="tmono">Support</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="sv-card card border-0 p-4">
+                            <div class="sv-icon ic-p mb-3">📊</div>
+                            <h6 class="fw-bold mb-2">Power BI Dashboards</h6>
+                            <p
+                                class="mb-3"
+                                style="
+                                    font-size: 0.83rem;
+                                    color: var(--mu);
+                                    line-height: 1.7;
+                                "
+                            >
+                                Interactive dashboards that turn raw data into
+                                clear visuals for smarter decisions.
+                            </p>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="tmono">Power BI</span
+                                ><span class="tmono">Analytics</span
+                                ><span class="tmono">Reporting</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="sv-card card border-0 p-4">
+                            <div class="sv-icon ic-a mb-3">🔗</div>
+                            <h6 class="fw-bold mb-2">
+                                Third-Party API Integration
+                            </h6>
+                            <p
+                                class="mb-3"
+                                style="
+                                    font-size: 0.83rem;
+                                    color: var(--mu);
+                                    line-height: 1.7;
+                                "
+                            >
+                                Connect payment gateways, CRMs, and
+                                communication APIs into Django apps.
+                            </p>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="tmono">REST API</span
+                                ><span class="tmono">Webhooks</span
+                                ><span class="tmono">Django</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="sv-card card border-0 p-4">
+                            <div class="sv-icon ic-s mb-3">📧</div>
+                            <h6 class="fw-bold mb-2">
+                                Email &amp; Notification Automation
+                            </h6>
+                            <p
+                                class="mb-3"
+                                style="
+                                    font-size: 0.83rem;
+                                    color: var(--mu);
+                                    line-height: 1.7;
+                                "
+                            >
+                                Automate email campaigns, transactional emails,
+                                and push notifications.
+                            </p>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="tmono">Email</span
+                                ><span class="tmono">n8n</span
+                                ><span class="tmono">Automation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<body>
+        <!-- N8N CREATOR -->
+        <section id="n8n-creator" class="py-5" style="background: var(--bg)">
+            <div class="container py-4">
+                <div class="sec-label mb-2">Community</div>
+                <h2 class="sec-title mb-5">n8n Creator</h2>
+                <div class="row g-4">
+                    <div class="col-12 reveal">
+                        <div
+                            class="sc-card p-4 p-lg-5 d-flex flex-column flex-md-row align-items-md-center gap-4"
+                        >
+                            <div
+                                class="svc-em"
+                                style="font-size: 2.2rem; flex-shrink: 0"
+                            >
+                                🚀
+                            </div>
+                            <div class="flex-grow-1">
+                                <h5 class="fw-bold mb-2">
+                                    Official n8n Creator
+                                </h5>
+                                <p
+                                    class="mb-0"
+                                    style="
+                                        font-size: 0.9rem;
+                                        color: var(--mu);
+                                        line-height: 1.7;
+                                    "
+                                >
+                                    I publish automation workflows on the
+                                    official n8n Template Library. Explore my
+                                    latest templates and automation projects.
+                                </p>
+                            </div>
+                            <a
+                                href="https://n8n.io/creators/yuvraj/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-dark px-4 py-2 rounded-3 fw-semibold flex-shrink-0"
+                            >
+                                View Creator Profile →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg sticky-top py-2 shadow-none">
-    <div class="container">
-      <a class="navbar-brand" href="#hero">Yuvraj <span>Champaneri</span></a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMain">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-1 py-2 py-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item ms-lg-1"><a class="btn-dl" href="{% static 'assets/Resume.pdf' %}" download><i
-                class="bi bi-download"></i> Resume</a></li>
-          <li class="nav-item ms-lg-1"><a class="nav-link btn-hire" href="#contact">Hire Me</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+        <!-- ABOUT -->
+        <section id="about" class="py-5" style="background: var(--bg)">
+            <div class="container py-4">
+                <div class="sec-label mb-2">About Me</div>
+                <h2 class="sec-title mb-5">The Person Behind the Code</h2>
+                <div class="row g-5 align-items-start">
+                    <div class="col-lg-12 reveal">
+                        <p
+                            style="
+                                color: var(--mu);
+                                font-size: 0.97rem;
+                                line-height: 1.85;
+                            "
+                        >
+                            I'm
+                            <strong style="color: var(--tx)"
+                                >Yuvraj Champaneri</strong
+                            >, a Python &amp; Django Developer based in
+                            Ahmedabad. I completed my
+                            <strong style="color: var(--tx)"
+                                >MSc in Information Technology</strong
+                            >
+                            from ISTAR, Vallabh Vidyanagar with a CGPA of 8.4.
+                        </p>
+                        <p
+                            class="mt-3"
+                            style="
+                                color: var(--mu);
+                                font-size: 0.97rem;
+                                line-height: 1.85;
+                            "
+                        >
+                            My journey started with a
+                            <strong style="color: var(--tx)"
+                                >6-month internship at Mighty Ventures Business
+                                Solutions LLP</strong
+                            >, working on real Django projects and automation
+                            workflows, before being hired full-time as a
+                            <strong style="color: var(--tx)"
+                                >Junior Python Developer</strong
+                            >.
+                        </p>
+                        <div class="ahl px-3 py-3 mt-4 mb-3">
+                            🏆 Recognized as
+                            <strong>Employee of the Month — July 2025</strong>
+                            at Mighty Ventures for outstanding performance.
+                        </div>
+                        <p
+                            style="
+                                color: var(--mu);
+                                font-size: 0.97rem;
+                                line-height: 1.85;
+                            "
+                        >
+                            Outside work I enjoy
+                            <strong style="color: var(--tx)"
+                                >chess, volleyball</strong
+                            >, trekking, and exploring new AI tools.
+                        </p>
+                    </div>
+                    {% comment %}
+                    <div class="col-lg-5 reveal">
+                        <div
+                            class="ic-row d-flex align-items-center gap-3 p-3 mb-2"
+                        >
+                            <div class="ic-dot">📍</div>
+                            <div>
+                                <div
+                                    style="
+                                        font-family: var(--fm);
+                                        font-size: 0.62rem;
+                                        text-transform: uppercase;
+                                        letter-spacing: 0.07em;
+                                        color: var(--mu);
+                                    "
+                                >
+                                    Location
+                                </div>
+                                <div
+                                    style="font-size: 0.86rem; font-weight: 500"
+                                >
+                                    Ahmedabad, Gujarat
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="ic-row d-flex align-items-center gap-3 p-3 mb-2"
+                        >
+                            <div class="ic-dot">✉️</div>
+                            <div>
+                                <div
+                                    style="
+                                        font-family: var(--fm);
+                                        font-size: 0.62rem;
+                                        text-transform: uppercase;
+                                        letter-spacing: 0.07em;
+                                        color: var(--mu);
+                                    "
+                                >
+                                    Email
+                                </div>
+                                <div style="font-size: 0.86rem">
+                                    <a
+                                        href="mailto:soniyuvraj9499@gmail.com"
+                                        style="
+                                            color: var(--g);
+                                            text-decoration: none;
+                                        "
+                                        >soniyuvraj9499@gmail.com</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="ic-row d-flex align-items-center gap-3 p-3 mb-2"
+                        >
+                            <div class="ic-dot">📱</div>
+                            <div>
+                                <div
+                                    style="
+                                        font-family: var(--fm);
+                                        font-size: 0.62rem;
+                                        text-transform: uppercase;
+                                        letter-spacing: 0.07em;
+                                        color: var(--mu);
+                                    "
+                                >
+                                    Phone
+                                </div>
+                                <div style="font-size: 0.86rem">
+                                    <a
+                                        href="tel:+919499561272"
+                                        style="
+                                            color: var(--tx);
+                                            text-decoration: none;
+                                        "
+                                        >+91 94995 61272</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="ic-row d-flex align-items-center gap-3 p-3 mb-3"
+                        >
+                            <div class="ic-dot">🌐</div>
+                            <div>
+                                <div
+                                    style="
+                                        font-family: var(--fm);
+                                        font-size: 0.62rem;
+                                        text-transform: uppercase;
+                                        letter-spacing: 0.07em;
+                                        color: var(--mu);
+                                    "
+                                >
+                                    Portfolio
+                                </div>
+                                <div style="font-size: 0.86rem">
+                                    <a
+                                        href="https://portfolio-iw7k.onrender.com/"
+                                        target="_blank"
+                                        style="
+                                            color: var(--g);
+                                            text-decoration: none;
+                                        "
+                                        >portfolio-iw7k.onrender.com</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="stat-box p-3">
+                                    <div class="stat-num">1+</div>
+                                    <div
+                                        style="
+                                            font-size: 0.69rem;
+                                            color: var(--mu);
+                                        "
+                                    >
+                                        Yrs Experience
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-box p-3">
+                                    <div class="stat-num">5+</div>
+                                    <div
+                                        style="
+                                            font-size: 0.69rem;
+                                            color: var(--mu);
+                                        "
+                                    >
+                                        Projects Built
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-box p-3">
+                                    <div class="stat-num">MSc</div>
+                                    <div
+                                        style="
+                                            font-size: 0.69rem;
+                                            color: var(--mu);
+                                        "
+                                    >
+                                        CGPA 8.4
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-box p-3">
+                                    <div class="stat-num">🏆</div>
+                                    <div
+                                        style="
+                                            font-size: 0.69rem;
+                                            color: var(--mu);
+                                        "
+                                    >
+                                        Employee of Month
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endcomment %}
+                </div>
+            </div>
+        </section>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="container py-5" style="position:relative;z-index:1">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-7">
-          <div class="status-badge mb-4"><span class="status-dot"></span> Available for new opportunities</div>
-          <h1 class="hero-name mb-3">Python &amp; &nbsp;<em>Django</em><br>Developer</h1>
-          <p class="mb-4" style="color:var(--mu);max-width:460px;line-height:1.8;font-size:.98rem">
-            Hi, I'm <strong style="color:var(--tx)">Yuvraj Champaneri</strong> — building scalable web apps, automating
-            workflows with <strong style="color:var(--tx)">n8n &amp; AI</strong>, and crafting <strong
-              style="color:var(--tx)">Power BI dashboards</strong>. Based in Ahmedabad.
-          </p>
-          <div class="d-flex flex-wrap gap-2 mb-4">
-            <span class="chip">🐍 Django / Python</span>
-            <span class="chip">⚡ n8n Automation</span>
-            <span class="chip">🤖 AI Chatbots</span>
-            <span class="chip">📊 Power BI</span>
-          </div>
-          <div class="d-flex flex-wrap gap-3">
-            <a href="#projects" class="btn btn-dark px-4 py-2 rounded-3 fw-semibold">See My Work →</a>
-            <a class="btn-dl" href="{% static 'assets/Resume.pdf' %}" download><i class="bi bi-download"></i> Resume</a>
-            <a href="#contact" class="btn px-4 py-2 rounded-3 fw-medium"
-              style="background:#fff;border:1.5px solid var(--bd);color:var(--mu)">Get in Touch</a>
-          </div>
-        </div>
-        <div class="col-lg-5">
-          <div class="sc-card p-4">
-            <div class="d-flex align-items-center justify-content-between pb-3 mb-3"
-              style="border-bottom:1px solid var(--bd)">
-              <span
-                style="font-family:var(--fm);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)">What
-                I Build</span>
-              <div class="d-flex gap-1"><span class="dot-r"></span><span class="dot-y"></span><span
-                  class="dot-g"></span></div>
+        <!-- EXPERIENCE -->
+        <section id="experience" class="py-5" style="background: #fff">
+            <div class="container py-4">
+                <div class="sec-label mb-2">Experience</div>
+                <h2 class="sec-title mb-5">Where I've Worked</h2>
+                <div class="row g-0">
+                    <div class="col-lg-3">
+                        <div
+                            class="exp-sidebar-wrap pe-lg-4 d-flex flex-column gap-2"
+                            style="border-right: 1px solid var(--bd)"
+                        >
+                            <div class="exp-tab active p-3" data-panel="mv1">
+                                <div
+                                    class="exp-co fw-semibold"
+                                    style="font-size: 0.85rem"
+                                >
+                                    Mighty Ventures LLP
+                                </div>
+                                <div
+                                    style="
+                                        font-family: var(--fm);
+                                        font-size: 0.62rem;
+                                        color: var(--mu);
+                                    "
+                                >
+                                    Jun 2025 – Present
+                                </div>
+                            </div>
+                            <div class="exp-tab p-3" data-panel="mv2">
+                                <div
+                                    class="exp-co fw-semibold"
+                                    style="font-size: 0.85rem"
+                                >
+                                    Mighty Ventures LLP
+                                </div>
+                                <div
+                                    style="
+                                        font-family: var(--fm);
+                                        font-size: 0.62rem;
+                                        color: var(--mu);
+                                    "
+                                >
+                                    Dec 2024 – May 2025
+                                </div>
+                            </div>
+                            <div class="exp-tab p-3" data-panel="apex">
+                                <div
+                                    class="exp-co fw-semibold"
+                                    style="font-size: 0.85rem"
+                                >
+                                    Apex Software House
+                                </div>
+                                <div
+                                    style="
+                                        font-family: var(--fm);
+                                        font-size: 0.62rem;
+                                        color: var(--mu);
+                                    "
+                                >
+                                    Jan 2023 – Feb 2023
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 ps-lg-5 mt-4 mt-lg-0">
+                        <div class="exp-panel active" id="panel-mv1">
+                            <span class="period-tag mb-3 d-inline-block"
+                                >Jun 2025 – Present · Full-time ·
+                                Ahmedabad</span
+                            >
+                            <div class="exp-cname mb-1">
+                                Mighty Ventures Business Solutions LLP
+                            </div>
+                            <div
+                                class="fw-semibold mb-3"
+                                style="color: var(--g); font-size: 0.89rem"
+                            >
+                                Junior Python Developer
+                            </div>
+                            <ul class="exp-list mb-3">
+                                <li>
+                                    Developing and maintaining scalable Django
+                                    web applications for client business
+                                    operations.
+                                </li>
+                                <li>
+                                    Building automated workflows using n8n to
+                                    streamline internal processes.
+                                </li>
+                                <li>
+                                    Contributing to third-party API integrations
+                                    and backend architecture decisions.
+                                </li>
+                            </ul>
+                            <div
+                                class="award-box d-inline-flex align-items-center gap-2 px-3 py-2"
+                            >
+                                🏆 Employee of the Month — July 2025
+                            </div>
+                        </div>
+                        <div class="exp-panel" id="panel-mv2">
+                            <span class="period-tag mb-3 d-inline-block"
+                                >Dec 2024 – May 2025 · Internship · 6
+                                months</span
+                            >
+                            <div class="exp-cname mb-1">
+                                Mighty Ventures Business Solutions LLP
+                            </div>
+                            <div
+                                class="fw-semibold mb-3"
+                                style="color: var(--g); font-size: 0.89rem"
+                            >
+                                Python Developer Intern
+                            </div>
+                            <ul class="exp-list">
+                                <li>
+                                    Hands-on experience in Python and Django
+                                    through real-world project development.
+                                </li>
+                                <li>
+                                    Developed reusable modules and automation
+                                    solutions for business workflows.
+                                </li>
+                                <li>
+                                    Integrated API-based workflows with n8n for
+                                    lead generation and notifications.
+                                </li>
+                                <li>
+                                    Converted to full-time role based on
+                                    internship performance.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="exp-panel" id="panel-apex">
+                            <span class="period-tag mb-3 d-inline-block"
+                                >Jan 2023 – Feb 2023 · Internship ·
+                                Bhavnagar</span
+                            >
+                            <div class="exp-cname mb-1">
+                                Apex Software House
+                            </div>
+                            <div
+                                class="fw-semibold mb-3"
+                                style="color: var(--g); font-size: 0.89rem"
+                            >
+                                Web Design Intern
+                            </div>
+                            <ul class="exp-list">
+                                <li>
+                                    Designed responsive web templates for client
+                                    projects using HTML &amp; CSS.
+                                </li>
+                                <li>
+                                    Translated client requirements into UI/UX
+                                    solutions.
+                                </li>
+                                <li>
+                                    Created reusable component libraries to
+                                    improve workflow efficiency.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="d-flex flex-column gap-2 mb-3">
-              <div class="svc-row">
-                <div class="svc-em">🐍</div>
-                <div class="flex-grow-1">
-                  <div class="fw-semibold" style="font-size:.85rem">Django Web Apps</div>
-                  <div style="font-size:.72rem;color:var(--mu)">Scalable backends &amp; admin systems</div>
-                </div><span class="svc-badge">Python</span>
-              </div>
-              <div class="svc-row">
-                <div class="svc-em">⚡</div>
-                <div class="flex-grow-1">
-                  <div class="fw-semibold" style="font-size:.85rem">n8n Automation</div>
-                  <div style="font-size:.72rem;color:var(--mu)">Workflow &amp; business automation</div>
-                </div><span class="svc-badge">No-code</span>
-              </div>
-              <div class="svc-row">
-                <div class="svc-em">🤖</div>
-                <div class="flex-grow-1">
-                  <div class="fw-semibold" style="font-size:.85rem">AI Chatbots</div>
-                  <div style="font-size:.72rem;color:var(--mu)">Smart customer support bots</div>
-                </div><span class="svc-badge">AI</span>
-              </div>
-              <div class="svc-row">
-                <div class="svc-em">📊</div>
-                <div class="flex-grow-1">
-                  <div class="fw-semibold" style="font-size:.85rem">Power BI Dashboards</div>
-                  <div style="font-size:.72rem;color:var(--mu)">Interactive data visualizations</div>
-                </div><span class="svc-badge">Analytics</span>
-              </div>
-            </div>
-            <div class="row g-2">
-              <div class="col-4"><a href="https://github.com/Yuvrajsoni05" target="_blank" class="soc-btn"><i
-                    class="bi bi-github"></i> GitHub</a></div>
-              <div class="col-4"><a href="https://www.linkedin.com/in/yuvraj-champaneri-2678a7248/" target="_blank"
-                  class="soc-btn"><i class="bi bi-linkedin"></i> LinkedIn</a></div>
-              <div class="col-4"><a href="mailto:soniyuvraj9499@gmail.com" class="soc-btn"><i
-                    class="bi bi-envelope"></i> Email</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="py-5" style="background:#fff">
-    <div class="container py-4">
-      <div class="sec-label mb-2">What I Do</div>
-      <h2 class="sec-title mb-5">My Core Services</h2>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="sv-card card border-0 p-4">
-            <div class="sv-icon ic-g mb-3">🐍</div>
-            <h6 class="fw-bold mb-2">Django Web Development</h6>
-            <p class="mb-3" style="font-size:.83rem;color:var(--mu);line-height:1.7">Scalable backends, REST APIs, and
-              admin panels — clean and production-ready.</p>
-            <div class="d-flex flex-wrap gap-1"><span class="tmono">Django</span><span class="tmono">Python</span><span
-                class="tmono">REST API</span><span class="tmono">PostgreSQL</span></div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="sv-card card border-0 p-4">
-            <div class="sv-icon ic-o mb-3">⚡</div>
-            <h6 class="fw-bold mb-2">n8n Workflow Automation</h6>
-            <p class="mb-3" style="font-size:.83rem;color:var(--mu);line-height:1.7">Automation pipelines for email
-              marketing, lead generation, and API integrations.</p>
-            <div class="d-flex flex-wrap gap-1"><span class="tmono">n8n</span><span class="tmono">Workflow</span><span
-                class="tmono">API</span><span class="tmono">Lead Gen</span></div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="sv-card card border-0 p-4">
-            <div class="sv-icon ic-i mb-3">🤖</div>
-            <h6 class="fw-bold mb-2">AI Chatbot Development</h6>
-            <p class="mb-3" style="font-size:.83rem;color:var(--mu);line-height:1.7">AI-powered bots for HR assistance,
-              customer support, and FAQ automation.</p>
-            <div class="d-flex flex-wrap gap-1"><span class="tmono">AI</span><span class="tmono">Chatbot</span><span
-                class="tmono">n8n</span><span class="tmono">Support</span></div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="sv-card card border-0 p-4">
-            <div class="sv-icon ic-p mb-3">📊</div>
-            <h6 class="fw-bold mb-2">Power BI Dashboards</h6>
-            <p class="mb-3" style="font-size:.83rem;color:var(--mu);line-height:1.7">Interactive dashboards that turn
-              raw data into clear visuals for smarter decisions.</p>
-            <div class="d-flex flex-wrap gap-1"><span class="tmono">Power BI</span><span
-                class="tmono">Analytics</span><span class="tmono">Reporting</span></div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="sv-card card border-0 p-4">
-            <div class="sv-icon ic-a mb-3">🔗</div>
-            <h6 class="fw-bold mb-2">Third-Party API Integration</h6>
-            <p class="mb-3" style="font-size:.83rem;color:var(--mu);line-height:1.7">Connect payment gateways, CRMs, and
-              communication APIs into Django apps.</p>
-            <div class="d-flex flex-wrap gap-1"><span class="tmono">REST API</span><span
-                class="tmono">Webhooks</span><span class="tmono">Django</span></div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="sv-card card border-0 p-4">
-            <div class="sv-icon ic-s mb-3">📧</div>
-            <h6 class="fw-bold mb-2">Email &amp; Notification Automation</h6>
-            <p class="mb-3" style="font-size:.83rem;color:var(--mu);line-height:1.7">Automate email campaigns,
-              transactional emails, and push notifications.</p>
-            <div class="d-flex flex-wrap gap-1"><span class="tmono">Email</span><span class="tmono">n8n</span><span
-                class="tmono">Automation</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <!-- PROJECTS -->
+        <section id="projects" class="py-5" style="background: var(--bg)">
+            <div class="container py-4">
+                <div class="sec-label mb-2">Projects</div>
+                <h2 class="sec-title mb-5">Featured Work</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="proj-card card border p-4">
+                            <div
+                                class="d-flex justify-content-between align-items-start mb-3"
+                            >
+                                <div class="proj-icon">🏭</div>
+                                <span class="proj-type">Django</span>
+                            </div>
+                            <h6 class="fw-bold mb-2">Nirmal PMS</h6>
+                            <p
+                                class="mb-3"
+                                style="
+                                    font-size: 0.82rem;
+                                    color: var(--mu);
+                                    line-height: 1.7;
+                                "
+                            >
+                                Job entry, cylinder tracking, Proforma Invoice
+                                generation, quotation management, and automated
+                                email dispatch.
+                            </p>
+                            <div class="d-flex flex-wrap gap-1 mt-auto">
+                                <span class="proj-tag">Django</span
+                                ><span class="proj-tag">Python</span
+                                ><span class="proj-tag">PostgreSQL</span
+                                ><span class="proj-tag">Email</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="proj-card card border p-4">
+                            <div
+                                class="d-flex justify-content-between align-items-start mb-3"
+                            >
+                                <div class="proj-icon">🏛️</div>
+                                <span class="proj-type">Django</span>
+                            </div>
+                            <h6 class="fw-bold mb-2">Young India Ahmedabad</h6>
+                            <p
+                                class="mb-3"
+                                style="
+                                    font-size: 0.82rem;
+                                    color: var(--mu);
+                                    line-height: 1.7;
+                                "
+                            >
+                                Dual admin panel with user roles,
+                                forgot-password, and database management. Full
+                                Django stack with authentication.
+                            </p>
+                            <div class="d-flex flex-wrap gap-1 mt-auto">
+                                <span class="proj-tag">Django</span
+                                ><span class="proj-tag">Auth</span
+                                ><span class="proj-tag">RBAC</span
+                                ><span class="proj-tag">SQLite</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="proj-card card border p-4">
+                            <div
+                                class="d-flex justify-content-between align-items-start mb-3"
+                            >
+                                <div class="proj-icon">⚡</div>
+                                <span class="proj-type">n8n + AI</span>
+                            </div>
+                            <h6 class="fw-bold mb-2">
+                                n8n Automation &amp; AI Chatbots
+                            </h6>
+                            <p
+                                class="mb-3"
+                                style="
+                                    font-size: 0.82rem;
+                                    color: var(--mu);
+                                    line-height: 1.7;
+                                "
+                            >
+                                Email marketing, lead generation, AI bots for HR
+                                &amp; customer support, and real-time
+                                notifications using n8n.
+                            </p>
+                            <div class="d-flex flex-wrap gap-1 mt-auto">
+                                <span class="proj-tag">n8n</span
+                                ><span class="proj-tag">AI</span
+                                ><span class="proj-tag">Chatbot</span
+                                ><span class="proj-tag">API</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="proj-card card border p-4">
+                            <div
+                                class="d-flex justify-content-between align-items-start mb-3"
+                            >
+                                <div class="proj-icon">💎</div>
+                                <span class="proj-type">Django</span>
+                            </div>
+                            <h6 class="fw-bold mb-2">Jewelry Shop Website</h6>
+                            <p
+                                class="mb-3"
+                                style="
+                                    font-size: 0.82rem;
+                                    color: var(--mu);
+                                    line-height: 1.7;
+                                "
+                            >
+                                E-commerce platform with login/signup, user
+                                management, and CRUD for jewelry collections.
+                            </p>
+                            <div class="d-flex flex-wrap gap-1 mt-auto">
+                                <span class="proj-tag">Django</span
+                                ><span class="proj-tag">CRUD</span
+                                ><span class="proj-tag">Auth</span
+                                ><span class="proj-tag">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <div class="proj-card card border p-4">
+                            <div
+                                class="d-flex justify-content-between align-items-start mb-3"
+                            >
+                                <div class="proj-icon">📊</div>
+                                <span class="proj-type">Power BI</span>
+                            </div>
+                            <h6 class="fw-bold mb-2">
+                                Skill Nation Visualization
+                            </h6>
+                            <p
+                                class="mb-3"
+                                style="
+                                    font-size: 0.82rem;
+                                    color: var(--mu);
+                                    line-height: 1.7;
+                                "
+                            >
+                                Interactive Power BI dashboards with actionable
+                                business intelligence insights.
+                            </p>
+                            <div class="d-flex flex-wrap gap-1 mt-auto">
+                                <span class="proj-tag">Power BI</span
+                                ><span class="proj-tag">Data Viz</span
+                                ><span class="proj-tag">Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="py-5" style="background:var(--bg)">
-    <div class="container py-4">
-      <div class="sec-label mb-2">About Me</div>
-      <h2 class="sec-title mb-5">The Person Behind the Code</h2>
-      <div class="row g-5 align-items-start">
-        <div class="col-lg-12 reveal">
-          <p style="color:var(--mu);font-size:.97rem;line-height:1.85">
-            I'm <strong style="color:var(--tx)">Yuvraj Champaneri</strong>, a Python &amp; Django Developer based in
-            Ahmedabad. I completed my <strong style="color:var(--tx)">MSc in Information Technology</strong> from ISTAR,
-            Vallabh Vidyanagar with a CGPA of 8.4.
-          </p>
-          <p class="mt-3" style="color:var(--mu);font-size:.97rem;line-height:1.85">
-            My journey started with a <strong style="color:var(--tx)">6-month internship at Mighty Ventures Business
-              Solutions LLP</strong>, working on real Django projects and automation workflows, before being hired
-            full-time as a <strong style="color:var(--tx)">Junior Python Developer</strong>.
-          </p>
-          <div class="ahl px-3 py-3 mt-4 mb-3">🏆 Recognized as <strong>Employee of the Month — July 2025</strong> at
-            Mighty Ventures for outstanding performance.</div>
-          <p style="color:var(--mu);font-size:.97rem;line-height:1.85">Outside work I enjoy <strong
-              style="color:var(--tx)">chess, volleyball</strong>, trekking, and exploring new AI tools.</p>
-        </div>
-        {% comment %} <div class="col-lg-5 reveal">
-          <div class="ic-row d-flex align-items-center gap-3 p-3 mb-2">
-            <div class="ic-dot">📍</div>
-            <div>
-              <div
-                style="font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:var(--mu)">
-                Location</div>
-              <div style="font-size:.86rem;font-weight:500">Ahmedabad, Gujarat</div>
+        <!-- SKILLS -->
+        <section id="skills" class="py-5" style="background: #fff">
+            <div class="container py-4">
+                <div class="sec-label mb-2">Skills</div>
+                <h2 class="sec-title mb-5">Technical Expertise</h2>
+                <div class="row g-5 align-items-start">
+                    <div class="col-lg-6 reveal skill-bars-wrap">
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span
+                                    class="fw-semibold"
+                                    style="font-size: 0.86rem"
+                                    >Python &amp; Django</span
+                                ><span class="bar-pct">85%</span>
+                            </div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" data-w="85"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span
+                                    class="fw-semibold"
+                                    style="font-size: 0.86rem"
+                                    >HTML &amp; CSS</span
+                                ><span class="bar-pct">90%</span>
+                            </div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" data-w="90"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span
+                                    class="fw-semibold"
+                                    style="font-size: 0.86rem"
+                                    >n8n Workflow Automation</span
+                                ><span class="bar-pct">80%</span>
+                            </div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" data-w="80"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span
+                                    class="fw-semibold"
+                                    style="font-size: 0.86rem"
+                                    >Power BI</span
+                                ><span class="bar-pct">80%</span>
+                            </div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" data-w="80"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span
+                                    class="fw-semibold"
+                                    style="font-size: 0.86rem"
+                                    >Data Science with Python</span
+                                ><span class="bar-pct">85%</span>
+                            </div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" data-w="85"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span
+                                    class="fw-semibold"
+                                    style="font-size: 0.86rem"
+                                    >JavaScript</span
+                                ><span class="bar-pct">70%</span>
+                            </div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" data-w="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 reveal">
+                        <div class="mb-4">
+                            <div class="cat-lbl mb-2">
+                                Languages &amp; Frameworks
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="tech-pill">🐍 Python</span
+                                ><span class="tech-pill">🌐 Django</span
+                                ><span class="tech-pill">📜 JavaScript</span
+                                ><span class="tech-pill">🎨 HTML5</span
+                                ><span class="tech-pill">✨ CSS3</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="cat-lbl mb-2">Automation &amp; AI</div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="tech-pill">⚡ n8n</span
+                                ><span class="tech-pill">🤖 AI Chatbots</span
+                                ><span class="tech-pill"
+                                    >🔗 API Integration</span
+                                ><span class="tech-pill"
+                                    >📧 Email Automation</span
+                                >
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="cat-lbl mb-2">
+                                Databases &amp; Tools
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="tech-pill">🐘 PostgreSQL</span
+                                ><span class="tech-pill">🗃️ SQLite</span
+                                ><span class="tech-pill">🐙 Git / GitHub</span
+                                ><span class="tech-pill">📊 Power BI</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="cat-lbl mb-2">Interests</div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="tech-pill">♟️ Chess</span
+                                ><span class="tech-pill">🏐 Volleyball</span
+                                ><span class="tech-pill">🥾 Trekking</span
+                                ><span class="tech-pill">🤖 AI Tools</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="ic-row d-flex align-items-center gap-3 p-3 mb-2">
-            <div class="ic-dot">✉️</div>
-            <div>
-              <div
-                style="font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:var(--mu)">
-                Email</div>
-              <div style="font-size:.86rem"><a href="mailto:soniyuvraj9499@gmail.com"
-                  style="color:var(--g);text-decoration:none">soniyuvraj9499@gmail.com</a></div>
-            </div>
-          </div>
-          <div class="ic-row d-flex align-items-center gap-3 p-3 mb-2">
-            <div class="ic-dot">📱</div>
-            <div>
-              <div
-                style="font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:var(--mu)">
-                Phone</div>
-              <div style="font-size:.86rem"><a href="tel:+919499561272" style="color:var(--tx);text-decoration:none">+91
-                  94995 61272</a></div>
-            </div>
-          </div>
-          <div class="ic-row d-flex align-items-center gap-3 p-3 mb-3">
-            <div class="ic-dot">🌐</div>
-            <div>
-              <div
-                style="font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:var(--mu)">
-                Portfolio</div>
-              <div style="font-size:.86rem"><a href="https://portfolio-iw7k.onrender.com/" target="_blank"
-                  style="color:var(--g);text-decoration:none">portfolio-iw7k.onrender.com</a></div>
-            </div>
-          </div>
-          <div class="row g-2">
-            <div class="col-6">
-              <div class="stat-box p-3">
-                <div class="stat-num">1+</div>
-                <div style="font-size:.69rem;color:var(--mu)">Yrs Experience</div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="stat-box p-3">
-                <div class="stat-num">5+</div>
-                <div style="font-size:.69rem;color:var(--mu)">Projects Built</div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="stat-box p-3">
-                <div class="stat-num">MSc</div>
-                <div style="font-size:.69rem;color:var(--mu)">CGPA 8.4</div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="stat-box p-3">
-                <div class="stat-num">🏆</div>
-                <div style="font-size:.69rem;color:var(--mu)">Employee of Month</div>
-              </div>
-            </div>
-          </div>
-        </div> {% endcomment %}
-      </div>
-    </div>
-  </section>
+        </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience" class="py-5" style="background:#fff">
-    <div class="container py-4">
-      <div class="sec-label mb-2">Experience</div>
-      <h2 class="sec-title mb-5">Where I've Worked</h2>
-      <div class="row g-0">
-        <div class="col-lg-3">
-          <div class="exp-sidebar-wrap pe-lg-4 d-flex flex-column gap-2" style="border-right:1px solid var(--bd)">
-            <div class="exp-tab active p-3" data-panel="mv1">
-              <div class="exp-co fw-semibold" style="font-size:.85rem">Mighty Ventures LLP</div>
-              <div style="font-family:var(--fm);font-size:.62rem;color:var(--mu)">Jun 2025 – Present</div>
+        <!-- EDUCATION -->
+        <section id="education" class="py-5" style="background: var(--bg)">
+            <div class="container py-4">
+                <div class="sec-label mb-2">Education &amp; Certifications</div>
+                <h2 class="sec-title mb-5">Academic Background</h2>
+                <div class="row g-4">
+                    <div class="col-lg-6 reveal">
+                        <h5
+                            class="fw-semibold mb-3"
+                            style="
+                                font-family: var(--fh);
+                                font-weight: 400;
+                                font-size: 1.2rem;
+                            "
+                        >
+                            Education
+                        </h5>
+                        <div class="edu-card card border p-4 mb-3">
+                            <div class="edu-yr mb-1">2023 – 2025</div>
+                            <div class="fw-bold mb-1">
+                                MSc Information Technology
+                            </div>
+                            <p
+                                class="mb-2"
+                                style="font-size: 0.8rem; color: var(--mu)"
+                            >
+                                ISTAR, Vallabh Vidyanagar, Anand
+                            </p>
+                            <span class="cgpa-badge">🎓 CGPA: 8.4</span>
+                        </div>
+                        <div class="edu-card card border p-4">
+                            <div class="edu-yr mb-1">2020 – 2023</div>
+                            <div class="fw-bold mb-1">
+                                BSc Information Technology
+                            </div>
+                            <p
+                                class="mb-2"
+                                style="font-size: 0.8rem; color: var(--mu)"
+                            >
+                                Shree Swaminarayan Gurukul College, Bhavnagar
+                            </p>
+                            <span class="cgpa-badge">🎓 CGPA: 4.7</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 reveal">
+                        <h5
+                            class="fw-semibold mb-3"
+                            style="
+                                font-family: var(--fh);
+                                font-weight: 400;
+                                font-size: 1.2rem;
+                            "
+                        >
+                            Certifications &amp; Awards
+                        </h5>
+                        <div
+                            class="cert-item d-flex align-items-center gap-3 p-3 mb-2"
+                        >
+                            <div
+                                style="
+                                    font-size: 1.2rem;
+                                    width: 28px;
+                                    text-align: center;
+                                "
+                            >
+                                🏆
+                            </div>
+                            <div>
+                                <div
+                                    class="fw-semibold"
+                                    style="font-size: 0.86rem"
+                                >
+                                    Employee of the Month
+                                </div>
+                                <div
+                                    style="
+                                        font-family: var(--fm);
+                                        font-size: 0.68rem;
+                                        color: var(--mu);
+                                    "
+                                >
+                                    Mighty Ventures LLP · July 2025
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="cert-item d-flex align-items-center gap-3 p-3 mb-2"
+                        >
+                            <div
+                                style="
+                                    font-size: 1.2rem;
+                                    width: 28px;
+                                    text-align: center;
+                                "
+                            >
+                                📜
+                            </div>
+                            <div>
+                                <div
+                                    class="fw-semibold"
+                                    style="font-size: 0.86rem"
+                                >
+                                    Python Programming Certification
+                                </div>
+                                <div
+                                    style="
+                                        font-family: var(--fm);
+                                        font-size: 0.68rem;
+                                        color: var(--mu);
+                                    "
+                                >
+                                    IT Desk · 2021
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="cert-item d-flex align-items-center gap-3 p-3 mb-2"
+                        >
+                            <div
+                                style="
+                                    font-size: 1.2rem;
+                                    width: 28px;
+                                    text-align: center;
+                                "
+                            >
+                                🎓
+                            </div>
+                            <div>
+                                <div
+                                    class="fw-semibold"
+                                    style="font-size: 0.86rem"
+                                >
+                                    Complete Python Django Framework Bootcamp
+                                </div>
+                                <div
+                                    style="
+                                        font-family: var(--fm);
+                                        font-size: 0.68rem;
+                                        color: var(--mu);
+                                    "
+                                >
+                                    Udemy
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="cert-item d-flex align-items-center gap-3 p-3 mb-3"
+                        >
+                            <div
+                                style="
+                                    font-size: 1.2rem;
+                                    width: 28px;
+                                    text-align: center;
+                                "
+                            >
+                                📊
+                            </div>
+                            <div>
+                                <div
+                                    class="fw-semibold"
+                                    style="font-size: 0.86rem"
+                                >
+                                    Data Visualization with Power BI
+                                </div>
+                                <div
+                                    style="
+                                        font-family: var(--fm);
+                                        font-size: 0.68rem;
+                                        color: var(--mu);
+                                    "
+                                >
+                                    Skill Nation Workshop · 2023
+                                </div>
+                            </div>
+                        </div>
+                        <a
+                            href="https://yuvrajsoni05.github.io/certification/"
+                            target="_blank"
+                            class="btn fw-medium px-4 py-2 rounded-3"
+                            style="
+                                font-size: 0.85rem;
+                                color: var(--mu);
+                                background: #fff;
+                                border: 1.5px solid var(--bd);
+                            "
+                            >View All Certifications →</a
+                        >
+                    </div>
+                </div>
             </div>
-            <div class="exp-tab p-3" data-panel="mv2">
-              <div class="exp-co fw-semibold" style="font-size:.85rem">Mighty Ventures LLP</div>
-              <div style="font-family:var(--fm);font-size:.62rem;color:var(--mu)">Dec 2024 – May 2025</div>
-            </div>
-            <div class="exp-tab p-3" data-panel="apex">
-              <div class="exp-co fw-semibold" style="font-size:.85rem">Apex Software House</div>
-              <div style="font-family:var(--fm);font-size:.62rem;color:var(--mu)">Jan 2023 – Feb 2023</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-9 ps-lg-5 mt-4 mt-lg-0">
-          <div class="exp-panel active" id="panel-mv1">
-            <span class="period-tag mb-3 d-inline-block">Jun 2025 – Present · Full-time · Ahmedabad</span>
-            <div class="exp-cname mb-1">Mighty Ventures Business Solutions LLP</div>
-            <div class="fw-semibold mb-3" style="color:var(--g);font-size:.89rem">Junior Python Developer</div>
-            <ul class="exp-list mb-3">
-              <li>Developing and maintaining scalable Django web applications for client business operations.</li>
-              <li>Building automated workflows using n8n to streamline internal processes.</li>
-              <li>Contributing to third-party API integrations and backend architecture decisions.</li>
-            </ul>
-            <div class="award-box d-inline-flex align-items-center gap-2 px-3 py-2">🏆 Employee of the Month — July 2025
-            </div>
-          </div>
-          <div class="exp-panel" id="panel-mv2">
-            <span class="period-tag mb-3 d-inline-block">Dec 2024 – May 2025 · Internship · 6 months</span>
-            <div class="exp-cname mb-1">Mighty Ventures Business Solutions LLP</div>
-            <div class="fw-semibold mb-3" style="color:var(--g);font-size:.89rem">Python Developer Intern</div>
-            <ul class="exp-list">
-              <li>Hands-on experience in Python and Django through real-world project development.</li>
-              <li>Developed reusable modules and automation solutions for business workflows.</li>
-              <li>Integrated API-based workflows with n8n for lead generation and notifications.</li>
-              <li>Converted to full-time role based on internship performance.</li>
-            </ul>
-          </div>
-          <div class="exp-panel" id="panel-apex">
-            <span class="period-tag mb-3 d-inline-block">Jan 2023 – Feb 2023 · Internship · Bhavnagar</span>
-            <div class="exp-cname mb-1">Apex Software House</div>
-            <div class="fw-semibold mb-3" style="color:var(--g);font-size:.89rem">Web Design Intern</div>
-            <ul class="exp-list">
-              <li>Designed responsive web templates for client projects using HTML &amp; CSS.</li>
-              <li>Translated client requirements into UI/UX solutions.</li>
-              <li>Created reusable component libraries to improve workflow efficiency.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="py-5" style="background:var(--bg)">
-    <div class="container py-4">
-      <div class="sec-label mb-2">Projects</div>
-      <h2 class="sec-title mb-5">Featured Work</h2>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="proj-card card border p-4">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <div class="proj-icon">🏭</div><span class="proj-type">Django</span>
+        <!-- CONTACT -->
+        <section id="contact" class="py-5" style="background: #fff">
+            <div class="container py-4">
+                <div class="sec-label mb-2">Contact</div>
+                <h2 class="sec-title mb-5">Let's Work Together</h2>
+                <div class="row g-5 align-items-start">
+                    <div class="col-lg-7 reveal">
+                        <p
+                            class="mb-4"
+                            style="
+                                color: var(--mu);
+                                font-size: 0.97rem;
+                                line-height: 1.8;
+                            "
+                        >
+                            Open to full-time roles, freelance work, and
+                            consulting — Django apps, n8n automation, AI
+                            chatbots, or Power BI dashboards.
+                        </p>
+                        <div class="d-flex flex-column gap-2">
+                            <a
+                                href="mailto:soniyuvraj9499@gmail.com"
+                                class="cl-item d-flex align-items-center gap-3 p-3"
+                            >
+                                <div class="cl-ic">✉️</div>
+                                <div>
+                                    <div
+                                        style="
+                                            font-family: var(--fm);
+                                            font-size: 0.62rem;
+                                            text-transform: uppercase;
+                                            letter-spacing: 0.07em;
+                                            color: var(--mu);
+                                        "
+                                    >
+                                        Email
+                                    </div>
+                                    <div style="font-size: 0.88rem">
+                                        soniyuvraj9499@gmail.com
+                                    </div>
+                                </div>
+                            </a>
+                            <a
+                                href="tel:+919499561272"
+                                class="cl-item d-flex align-items-center gap-3 p-3"
+                            >
+                                <div class="cl-ic">📱</div>
+                                <div>
+                                    <div
+                                        style="
+                                            font-family: var(--fm);
+                                            font-size: 0.62rem;
+                                            text-transform: uppercase;
+                                            letter-spacing: 0.07em;
+                                            color: var(--mu);
+                                        "
+                                    >
+                                        Phone
+                                    </div>
+                                    <div style="font-size: 0.88rem">
+                                        +91 94995 61272
+                                    </div>
+                                </div>
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/yuvraj-champaneri-2678a7248/"
+                                target="_blank"
+                                class="cl-item d-flex align-items-center gap-3 p-3"
+                            >
+                                <div class="cl-ic">💼</div>
+                                <div>
+                                    <div
+                                        style="
+                                            font-family: var(--fm);
+                                            font-size: 0.62rem;
+                                            text-transform: uppercase;
+                                            letter-spacing: 0.07em;
+                                            color: var(--mu);
+                                        "
+                                    >
+                                        LinkedIn
+                                    </div>
+                                    <div style="font-size: 0.88rem">
+                                        yuvraj-champaneri-2678a7248
+                                    </div>
+                                </div>
+                            </a>
+                            <a
+                                href="https://github.com/Yuvrajsoni05"
+                                target="_blank"
+                                class="cl-item d-flex align-items-center gap-3 p-3"
+                            >
+                                <div class="cl-ic">🐙</div>
+                                <div>
+                                    <div
+                                        style="
+                                            font-family: var(--fm);
+                                            font-size: 0.62rem;
+                                            text-transform: uppercase;
+                                            letter-spacing: 0.07em;
+                                            color: var(--mu);
+                                        "
+                                    >
+                                        GitHub
+                                    </div>
+                                    <div style="font-size: 0.88rem">
+                                        github.com/Yuvrajsoni05
+                                    </div>
+                                </div>
+                            </a>
+                            <div
+                                class="cl-item d-flex align-items-center gap-3 p-3"
+                            >
+                                <div class="cl-ic">📍</div>
+                                <div>
+                                    <div
+                                        style="
+                                            font-family: var(--fm);
+                                            font-size: 0.62rem;
+                                            text-transform: uppercase;
+                                            letter-spacing: 0.07em;
+                                            color: var(--mu);
+                                        "
+                                    >
+                                        Location
+                                    </div>
+                                    <div style="font-size: 0.88rem">
+                                        Shyamal Cross Road, Ahmedabad 380001
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 reveal">
+                        <div class="cta-dark p-4 p-lg-5 text-white">
+                            <h3
+                                style="
+                                    font-family: var(--fh);
+                                    font-size: 1.65rem;
+                                    font-weight: 400;
+                                    letter-spacing: -0.3px;
+                                    line-height: 1.2;
+                                "
+                                class="mb-2"
+                            >
+                                Open to<br /><em style="color: #6ee7b7"
+                                    >Opportunities</em
+                                >
+                            </h3>
+                            <p
+                                class="mb-4"
+                                style="
+                                    color: rgba(255, 255, 255, 0.5);
+                                    font-size: 0.85rem;
+                                "
+                            >
+                                Full-time roles, freelance projects &amp;
+                                automation consulting.
+                            </p>
+                            <div class="avail-badge px-3 py-2 mb-4">
+                                <span class="avail-dot"></span> Available now ·
+                                Responds within 24 hrs
+                            </div>
+                            <a
+                                href="mailto:soniyuvraj9499@gmail.com"
+                                class="cta-main btn w-100 mb-2 py-3 fw-semibold"
+                                >Send me an Email</a
+                            >
+                            <a
+                                href="{% static 'assets/Resume.pdf' %}"
+                                target="_blank"
+                                class="cta-ghost btn w-100 mb-2 py-3"
+                                ><i class="bi bi-download me-1"></i> Download
+                                Resume</a
+                            >
+                            <a
+                                href="https://wa.me/9499561272?text=Hello%20I%20need%20assistance"
+                                target="_blank"
+                                class="cta-ghost btn w-100 py-3"
+                                >💬 Chat on WhatsApp</a
+                            >
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h6 class="fw-bold mb-2">Nirmal PMS</h6>
-            <p class="mb-3" style="font-size:.82rem;color:var(--mu);line-height:1.7">Job entry, cylinder tracking,
-              Proforma Invoice generation, quotation management, and automated email dispatch.</p>
-            <div class="d-flex flex-wrap gap-1 mt-auto"><span class="proj-tag">Django</span><span
-                class="proj-tag">Python</span><span class="proj-tag">PostgreSQL</span><span
-                class="proj-tag">Email</span></div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="proj-card card border p-4">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <div class="proj-icon">🏛️</div><span class="proj-type">Django</span>
-            </div>
-            <h6 class="fw-bold mb-2">Young India Ahmedabad</h6>
-            <p class="mb-3" style="font-size:.82rem;color:var(--mu);line-height:1.7">Dual admin panel with user roles,
-              forgot-password, and database management. Full Django stack with authentication.</p>
-            <div class="d-flex flex-wrap gap-1 mt-auto"><span class="proj-tag">Django</span><span
-                class="proj-tag">Auth</span><span class="proj-tag">RBAC</span><span class="proj-tag">SQLite</span></div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="proj-card card border p-4">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <div class="proj-icon">⚡</div><span class="proj-type">n8n + AI</span>
-            </div>
-            <h6 class="fw-bold mb-2">n8n Automation &amp; AI Chatbots</h6>
-            <p class="mb-3" style="font-size:.82rem;color:var(--mu);line-height:1.7">Email marketing, lead generation,
-              AI bots for HR &amp; customer support, and real-time notifications using n8n.</p>
-            <div class="d-flex flex-wrap gap-1 mt-auto"><span class="proj-tag">n8n</span><span
-                class="proj-tag">AI</span><span class="proj-tag">Chatbot</span><span class="proj-tag">API</span></div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="proj-card card border p-4">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <div class="proj-icon">💎</div><span class="proj-type">Django</span>
-            </div>
-            <h6 class="fw-bold mb-2">Jewelry Shop Website</h6>
-            <p class="mb-3" style="font-size:.82rem;color:var(--mu);line-height:1.7">E-commerce platform with
-              login/signup, user management, and CRUD for jewelry collections.</p>
-            <div class="d-flex flex-wrap gap-1 mt-auto"><span class="proj-tag">Django</span><span
-                class="proj-tag">CRUD</span><span class="proj-tag">Auth</span><span class="proj-tag">Python</span></div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="proj-card card border p-4">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-              <div class="proj-icon">📊</div><span class="proj-type">Power BI</span>
-            </div>
-            <h6 class="fw-bold mb-2">Skill Nation Visualization</h6>
-            <p class="mb-3" style="font-size:.82rem;color:var(--mu);line-height:1.7">Interactive Power BI dashboards
-              with actionable business intelligence insights.</p>
-            <div class="d-flex flex-wrap gap-1 mt-auto"><span class="proj-tag">Power BI</span><span
-                class="proj-tag">Data Viz</span><span class="proj-tag">Analytics</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="py-5" style="background:#fff">
-    <div class="container py-4">
-      <div class="sec-label mb-2">Skills</div>
-      <h2 class="sec-title mb-5">Technical Expertise</h2>
-      <div class="row g-5 align-items-start">
-        <div class="col-lg-6 reveal skill-bars-wrap">
-          <div class="mb-3">
-            <div class="d-flex justify-content-between mb-2"><span class="fw-semibold" style="font-size:.86rem">Python
-                &amp; Django</span><span class="bar-pct">85%</span></div>
-            <div class="bar-bg">
-              <div class="bar-fill" data-w="85"></div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <div class="d-flex justify-content-between mb-2"><span class="fw-semibold" style="font-size:.86rem">HTML
-                &amp; CSS</span><span class="bar-pct">90%</span></div>
-            <div class="bar-bg">
-              <div class="bar-fill" data-w="90"></div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <div class="d-flex justify-content-between mb-2"><span class="fw-semibold" style="font-size:.86rem">n8n
-                Workflow Automation</span><span class="bar-pct">80%</span></div>
-            <div class="bar-bg">
-              <div class="bar-fill" data-w="80"></div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <div class="d-flex justify-content-between mb-2"><span class="fw-semibold" style="font-size:.86rem">Power
-                BI</span><span class="bar-pct">80%</span></div>
-            <div class="bar-bg">
-              <div class="bar-fill" data-w="80"></div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <div class="d-flex justify-content-between mb-2"><span class="fw-semibold" style="font-size:.86rem">Data
-                Science with Python</span><span class="bar-pct">85%</span></div>
-            <div class="bar-bg">
-              <div class="bar-fill" data-w="85"></div>
-            </div>
-          </div>
-          <div>
-            <div class="d-flex justify-content-between mb-2"><span class="fw-semibold"
-                style="font-size:.86rem">JavaScript</span><span class="bar-pct">70%</span></div>
-            <div class="bar-bg">
-              <div class="bar-fill" data-w="70"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 reveal">
-          <div class="mb-4">
-            <div class="cat-lbl mb-2">Languages &amp; Frameworks</div>
-            <div class="d-flex flex-wrap gap-2"><span class="tech-pill">🐍 Python</span><span class="tech-pill">🌐
-                Django</span><span class="tech-pill">📜 JavaScript</span><span class="tech-pill">🎨 HTML5</span><span
-                class="tech-pill">✨ CSS3</span></div>
-          </div>
-          <div class="mb-4">
-            <div class="cat-lbl mb-2">Automation &amp; AI</div>
-            <div class="d-flex flex-wrap gap-2"><span class="tech-pill">⚡ n8n</span><span class="tech-pill">🤖 AI
-                Chatbots</span><span class="tech-pill">🔗 API Integration</span><span class="tech-pill">📧 Email
-                Automation</span></div>
-          </div>
-          <div class="mb-4">
-            <div class="cat-lbl mb-2">Databases &amp; Tools</div>
-            <div class="d-flex flex-wrap gap-2"><span class="tech-pill">🐘 PostgreSQL</span><span class="tech-pill">🗃️
-                SQLite</span><span class="tech-pill">🐙 Git / GitHub</span><span class="tech-pill">📊 Power BI</span>
-            </div>
-          </div>
-          <div>
-            <div class="cat-lbl mb-2">Interests</div>
-            <div class="d-flex flex-wrap gap-2"><span class="tech-pill">♟️ Chess</span><span class="tech-pill">🏐
-                Volleyball</span><span class="tech-pill">🥾 Trekking</span><span class="tech-pill">🤖 AI Tools</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education" class="py-5" style="background:var(--bg)">
-    <div class="container py-4">
-      <div class="sec-label mb-2">Education &amp; Certifications</div>
-      <h2 class="sec-title mb-5">Academic Background</h2>
-      <div class="row g-4">
-        <div class="col-lg-6 reveal">
-          <h5 class="fw-semibold mb-3" style="font-family:var(--fh);font-weight:400;font-size:1.2rem">Education</h5>
-          <div class="edu-card card border p-4 mb-3">
-            <div class="edu-yr mb-1">2023 – 2025</div>
-            <div class="fw-bold mb-1">MSc Information Technology</div>
-            <p class="mb-2" style="font-size:.8rem;color:var(--mu)">ISTAR, Vallabh Vidyanagar, Anand</p>
-            <span class="cgpa-badge">🎓 CGPA: 8.4</span>
-          </div>
-          <div class="edu-card card border p-4">
-            <div class="edu-yr mb-1">2020 – 2023</div>
-            <div class="fw-bold mb-1">BSc Information Technology</div>
-            <p class="mb-2" style="font-size:.8rem;color:var(--mu)">Shree Swaminarayan Gurukul College, Bhavnagar</p>
-            <span class="cgpa-badge">🎓 CGPA: 4.7</span>
-          </div>
-        </div>
-        <div class="col-lg-6 reveal">
-          <h5 class="fw-semibold mb-3" style="font-family:var(--fh);font-weight:400;font-size:1.2rem">Certifications
-            &amp; Awards</h5>
-          <div class="cert-item d-flex align-items-center gap-3 p-3 mb-2">
-            <div style="font-size:1.2rem;width:28px;text-align:center">🏆</div>
-            <div>
-              <div class="fw-semibold" style="font-size:.86rem">Employee of the Month</div>
-              <div style="font-family:var(--fm);font-size:.68rem;color:var(--mu)">Mighty Ventures LLP · July 2025</div>
-            </div>
-          </div>
-          <div class="cert-item d-flex align-items-center gap-3 p-3 mb-2">
-            <div style="font-size:1.2rem;width:28px;text-align:center">📜</div>
-            <div>
-              <div class="fw-semibold" style="font-size:.86rem">Python Programming Certification</div>
-              <div style="font-family:var(--fm);font-size:.68rem;color:var(--mu)">IT Desk · 2021</div>
-            </div>
-          </div>
-          <div class="cert-item d-flex align-items-center gap-3 p-3 mb-2">
-            <div style="font-size:1.2rem;width:28px;text-align:center">🎓</div>
-            <div>
-              <div class="fw-semibold" style="font-size:.86rem">Complete Python Django Framework Bootcamp</div>
-              <div style="font-family:var(--fm);font-size:.68rem;color:var(--mu)">Udemy</div>
-            </div>
-          </div>
-          <div class="cert-item d-flex align-items-center gap-3 p-3 mb-3">
-            <div style="font-size:1.2rem;width:28px;text-align:center">📊</div>
-            <div>
-              <div class="fw-semibold" style="font-size:.86rem">Data Visualization with Power BI</div>
-              <div style="font-family:var(--fm);font-size:.68rem;color:var(--mu)">Skill Nation Workshop · 2023</div>
-            </div>
-          </div>
-          <a href="https://yuvrajsoni05.github.io/certification/" target="_blank"
-            class="btn fw-medium px-4 py-2 rounded-3"
-            style="font-size:.85rem;color:var(--mu);background:#fff;border:1.5px solid var(--bd)">View All
-            Certifications →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="py-5" style="background:#fff">
-    <div class="container py-4">
-      <div class="sec-label mb-2">Contact</div>
-      <h2 class="sec-title mb-5">Let's Work Together</h2>
-      <div class="row g-5 align-items-start">
-        <div class="col-lg-7 reveal">
-          <p class="mb-4" style="color:var(--mu);font-size:.97rem;line-height:1.8">Open to full-time roles, freelance
-            work, and consulting — Django apps, n8n automation, AI chatbots, or Power BI dashboards.</p>
-          <div class="d-flex flex-column gap-2">
-            <a href="mailto:soniyuvraj9499@gmail.com" class="cl-item d-flex align-items-center gap-3 p-3">
-              <div class="cl-ic">✉️</div>
-              <div>
+        <!-- FOOTER -->
+        <footer
+            class="py-4"
+            style="background: var(--bg); border-top: 1px solid var(--bd)"
+        >
+            <div class="container">
                 <div
-                  style="font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:var(--mu)">
-                  Email</div>
-                <div style="font-size:.88rem">soniyuvraj9499@gmail.com</div>
-              </div>
-            </a>
-            <a href="tel:+919499561272" class="cl-item d-flex align-items-center gap-3 p-3">
-              <div class="cl-ic">📱</div>
-              <div>
-                <div
-                  style="font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:var(--mu)">
-                  Phone</div>
-                <div style="font-size:.88rem">+91 94995 61272</div>
-              </div>
-            </a>
-            <a href="https://www.linkedin.com/in/yuvraj-champaneri-2678a7248/" target="_blank"
-              class="cl-item d-flex align-items-center gap-3 p-3">
-              <div class="cl-ic">💼</div>
-              <div>
-                <div
-                  style="font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:var(--mu)">
-                  LinkedIn</div>
-                <div style="font-size:.88rem">yuvraj-champaneri-2678a7248</div>
-              </div>
-            </a>
-            <a href="https://github.com/Yuvrajsoni05" target="_blank"
-              class="cl-item d-flex align-items-center gap-3 p-3">
-              <div class="cl-ic">🐙</div>
-              <div>
-                <div
-                  style="font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:var(--mu)">
-                  GitHub</div>
-                <div style="font-size:.88rem">github.com/Yuvrajsoni05</div>
-              </div>
-            </a>
-            <div class="cl-item d-flex align-items-center gap-3 p-3">
-              <div class="cl-ic">📍</div>
-              <div>
-                <div
-                  style="font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:var(--mu)">
-                  Location</div>
-                <div style="font-size:.88rem">Shyamal Cross Road, Ahmedabad 380001</div>
-              </div>
+                    class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3"
+                >
+                    <div
+                        style="
+                            font-family: var(--fh);
+                            font-style: italic;
+                            font-size: 0.97rem;
+                        "
+                    >
+                        Yuvraj
+                        <em style="color: var(--g); font-style: normal"
+                            >Champaneri</em
+                        >
+                    </div>
+                    <div
+                        style="
+                            font-family: var(--fm);
+                            font-size: 0.72rem;
+                            color: var(--mu);
+                        "
+                    >
+                        © 2025 · Python &amp; Django Developer · Ahmedabad
+                    </div>
+                    <div class="d-flex gap-3">
+                        <a
+                            href="https://github.com/Yuvrajsoni05"
+                            target="_blank"
+                            style="
+                                font-size: 0.78rem;
+                                color: var(--mu);
+                                text-decoration: none;
+                            "
+                            >GitHub</a
+                        >
+                        <a
+                            href="https://www.linkedin.com/in/yuvraj-champaneri-2678a7248/"
+                            target="_blank"
+                            style="
+                                font-size: 0.78rem;
+                                color: var(--mu);
+                                text-decoration: none;
+                            "
+                            >LinkedIn</a
+                        >
+                        <a
+                            href="https://portfolio-iw7k.onrender.com/"
+                            target="_blank"
+                            style="
+                                font-size: 0.78rem;
+                                color: var(--mu);
+                                text-decoration: none;
+                            "
+                            >Portfolio</a
+                        >
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col-lg-5 reveal">
-          <div class="cta-dark p-4 p-lg-5 text-white">
-            <h3 style="font-family:var(--fh);font-size:1.65rem;font-weight:400;letter-spacing:-.3px;line-height:1.2"
-              class="mb-2">Open to<br><em style="color:#6ee7b7">Opportunities</em></h3>
-            <p class="mb-4" style="color:rgba(255,255,255,.5);font-size:.85rem">Full-time roles, freelance projects
-              &amp; automation consulting.</p>
-            <div class="avail-badge px-3 py-2 mb-4"><span class="avail-dot"></span> Available now · Responds within 24
-              hrs</div>
-            <a href="mailto:soniyuvraj9499@gmail.com" class="cta-main btn w-100 mb-2 py-3 fw-semibold">Send me an
-              Email</a>
-            <a href="{% static 'assets/Resume.pdf' %}" target="_blank" class="cta-ghost btn w-100 mb-2 py-3"><i
-                class="bi bi-download me-1"></i> Download Resume</a>
-            <a href="https://wa.me/9499561272?text=Hello%20I%20need%20assistance" target="_blank"
-              class="cta-ghost btn w-100 py-3">💬 Chat on WhatsApp</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        </footer>
 
-  <!-- FOOTER -->
-  <footer class="py-4" style="background:var(--bg);border-top:1px solid var(--bd)">
-    <div class="container">
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-        <div style="font-family:var(--fh);font-style:italic;font-size:.97rem">Yuvraj <em
-            style="color:var(--g);font-style:normal">Champaneri</em></div>
-        <div style="font-family:var(--fm);font-size:.72rem;color:var(--mu)">© 2025 · Python &amp; Django Developer ·
-          Ahmedabad</div>
-        <div class="d-flex gap-3">
-          <a href="https://github.com/Yuvrajsoni05" target="_blank"
-            style="font-size:.78rem;color:var(--mu);text-decoration:none">GitHub</a>
-          <a href="https://www.linkedin.com/in/yuvraj-champaneri-2678a7248/" target="_blank"
-            style="font-size:.78rem;color:var(--mu);text-decoration:none">LinkedIn</a>
-          <a href="https://portfolio-iw7k.onrender.com/" target="_blank"
-            style="font-size:.78rem;color:var(--mu);text-decoration:none">Portfolio</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+        <!-- WHATSAPP FLOAT -->
+        <a
+            href="https://wa.me/9499561272?text=Hello%20I%20need%20assistance"
+            target="_blank"
+            class="wa-float"
+            aria-label="WhatsApp"
+        >
+            <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+            </svg>
+        </a>
 
-  <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/9499561272?text=Hello%20I%20need%20assistance" target="_blank" class="wa-float"
-    aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
-      <path
-        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-    </svg>
-  </a>
+        <!-- ===================== PORTFOLIO CHATBOT ===================== -->
 
-  <!-- ===================== PORTFOLIO CHATBOT ===================== -->
-
-  <!-- Backdrop -->
-  <div id="chat-backdrop" onclick="closeChat()"
-    style="display:none;position:fixed;inset:0;z-index:1001;background:transparent;"></div>
-
-  <!-- Teaser Pop -->
-  <div id="chat-teaser"
-    style="position:fixed;bottom:148px;right:22px;z-index:1002;animation:slideIn .5s cubic-bezier(.22,1,.36,1) forwards;transform-origin:bottom right;">
-    <div
-      style="background:#fff;border:1px solid var(--bd);border-radius:16px 16px 4px 16px;padding:10px 14px 10px 12px;display:flex;align-items:center;gap:10px;box-shadow:0 4px 18px rgba(0,0,0,.10);max-width:220px;">
-      <div
-        style="width:32px;height:32px;background:#e8f5ee;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;animation:robotThink 3s ease-in-out infinite;transform-origin:center bottom;">
-        🤖</div>
-      <div style="flex:1;">
-        <p style="margin:0;font-size:20px;font-weight:600;color:var(--tx);line-height:1.4;">Hi, I’m Yuvraj AI 🤖
-        </p>
-        <p style="margin:2px 0 0;font-size:15px;color:#64748b;line-height:1.4;">How can I help you today?</p>
-      </div>
-      <span onclick="document.getElementById('chat-teaser').style.display='none'"
-        style="flex-shrink:0;font-size:13px;color:#94a3b8;cursor:pointer;align-self:flex-start;line-height:1;padding:2px;">✕</span>
-    </div>
-    <!-- Tail pointing down toward bubble -->
-    <div
-      style="position:absolute;bottom:-6px;right:22px;width:12px;height:12px;background:#fff;border-right:1px solid var(--bd);border-bottom:1px solid var(--bd);transform:rotate(45deg);">
-    </div>
-  </div>
-
-  <!-- Chat Bubble -->
-  <div id="chat-bubble" onclick="toggleChat()"
-    style="position:fixed;bottom:82px;right:22px;z-index:1003;width:52px;height:52px;background:var(--g);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(26,107,74,.4);transition:transform .2s,box-shadow .2s;font-size:1.5rem;"
-    onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-    <span id="chat-icon-open"
-      style="display:inline-block;animation:robotThink 3s ease-in-out infinite;transform-origin:center bottom;">🤖</span>
-    <svg id="chat-icon-close" width="18" height="18" viewBox="0 0 24 24" fill="white" style="display:none">
-      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-    </svg>
-    <span id="chat-notif"
-      style="position:absolute;top:0;right:0;width:13px;height:13px;background:#ef4444;border-radius:50%;border:2.5px solid #fff;animation:cb-bounce .8s ease infinite alternate;"></span>
-  </div>
-
-  <!-- Chat Window -->
-  <div id="chat-window"
-    style="position:fixed;bottom:148px;right:22px;z-index:1002;width:320px;max-height:480px;background:#fff;border-radius:20px;box-shadow:0 12px 48px rgba(0,0,0,.18);border:1.5px solid var(--bd);flex-direction:column;overflow:hidden;font-family:var(--fb);">
-
-    <!-- Header -->
-    <div style="background:var(--g);padding:14px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0;">
-      <div
-        style="width:38px;height:38px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0;">
-        🤖</div>
-      <div>
-        <div style="color:#fff;font-weight:600;font-size:.87rem;">Ask Yuvraj's AI</div>
-        <div style="color:rgba(255,255,255,.7);font-size:.7rem;display:flex;align-items:center;gap:5px;margin-top:2px;">
-          <span
-            style="width:6px;height:6px;background:#6ee7b7;border-radius:50%;display:inline-block;animation:blink 2s infinite;"></span>
-          Always online
-        </div>
-      </div>
-    </div>
-
-    <!-- Messages -->
-    <div id="chat-messages"
-      style="flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;max-height:280px;background:var(--bg);">
-      <div style="display:flex;gap:8px;align-items:flex-end;">
-        <div class="bot-av-wrap">
-          <div class="bot-av">🤖</div>
-        </div>
+        <!-- Backdrop -->
         <div
-          style="background:#fff;border:1px solid var(--bd);border-radius:16px 16px 16px 4px;padding:9px 12px;font-size:.81rem;color:var(--tx);line-height:1.55;max-width:220px;box-shadow:0 1px 3px rgba(0,0,0,.06);">
-          Hi! 👋 I'm Yuvraj's portfolio assistant. Ask me anything about his skills, projects, experience, or how to get
-          in touch!
+            id="chat-backdrop"
+            onclick="closeChat()"
+            style="
+                display: none;
+                position: fixed;
+                inset: 0;
+                z-index: 1001;
+                background: transparent;
+            "
+        ></div>
+
+        <!-- Teaser Pop -->
+        {% comment %} <div
+            id="chat-teaser"
+            style="
+                position: fixed;
+                bottom: 148px;
+                right: 22px;
+                z-index: 1002;
+                animation: slideIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+                transform-origin: bottom right;
+            "
+        >
+            <div
+                style="
+                    background: #fff;
+                    border: 1px solid var(--bd);
+                    border-radius: 16px 16px 4px 16px;
+                    padding: 10px 14px 10px 12px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+                    max-width: 220px;
+                "
+            >
+                <div
+                    style="
+                        width: 32px;
+                        height: 32px;
+                        background: #e8f5ee;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-shrink: 0;
+                        font-size: 1rem;
+                        animation: robotThink 3s ease-in-out infinite;
+                        transform-origin: center bottom;
+                    "
+                >
+                    🤖
+                </div>
+                <div style="flex: 1">
+                    <p
+                        style="
+                            margin: 0;
+                            font-size: 20px;
+                            font-weight: 600;
+                            color: var(--tx);
+                            line-height: 1.4;
+                        "
+                    >
+                        Hi, I’m Yuvraj AI 🤖
+                    </p>
+                    <p
+                        style="
+                            margin: 2px 0 0;
+                            font-size: 15px;
+                            color: #64748b;
+                            line-height: 1.4;
+                        "
+                    >
+                        How can I help you today?
+                    </p>
+                </div>
+                <span
+                    onclick="
+                        document.getElementById('chat-teaser').style.display =
+                            'none'
+                    "
+                    style="
+                        flex-shrink: 0;
+                        font-size: 13px;
+                        color: #94a3b8;
+                        cursor: pointer;
+                        align-self: flex-start;
+                        line-height: 1;
+                        padding: 2px;
+                    "
+                    >✕</span
+                >
+            </div>
+            <!-- Tail pointing down toward bubble -->
+            <div
+                style="
+                    position: absolute;
+                    bottom: -6px;
+                    right: 22px;
+                    width: 12px;
+                    height: 12px;
+                    background: #fff;
+                    border-right: 1px solid var(--bd);
+                    border-bottom: 1px solid var(--bd);
+                    transform: rotate(45deg);
+                "
+            ></div>
+        </div> {% endcomment %}
+
+        <!-- Chat Bubble -->
+        {% comment %} <div
+            id="chat-bubble"
+            onclick="toggleChat()"
+            style="
+                position: fixed;
+                bottom: 82px;
+                right: 22px;
+                z-index: 1003;
+                width: 52px;
+                height: 52px;
+                background: var(--g);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                box-shadow: 0 4px 20px rgba(26, 107, 74, 0.4);
+                transition:
+                    transform 0.2s,
+                    box-shadow 0.2s;
+                font-size: 1.5rem;
+            "
+            onmouseover="this.style.transform = 'scale(1.08)'"
+            onmouseout="this.style.transform = 'scale(1)'"
+        >
+            <span
+                id="chat-icon-open"
+                style="
+                    display: inline-block;
+                    animation: robotThink 3s ease-in-out infinite;
+                    transform-origin: center bottom;
+                "
+                >🤖</span
+            >
+            <svg
+                id="chat-icon-close"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="white"
+                style="display: none"
+            >
+                <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+            </svg>
+            <span
+                id="chat-notif"
+                style="
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 13px;
+                    height: 13px;
+                    background: #ef4444;
+                    border-radius: 50%;
+                    border: 2.5px solid #fff;
+                    animation: cb-bounce 0.8s ease infinite alternate;
+                "
+            ></span>
         </div>
-      </div>
-      <div id="quick-chips" style="display:flex;flex-wrap:wrap;gap:5px;padding-left:34px;">
-        <button onclick="sendQuick('What skills does Yuvraj have?')" class="qchip">Skills</button>
-        <button onclick="sendQuick('Tell me about his projects')" class="qchip">Projects</button>
-        <button onclick="sendQuick('How can I contact Yuvraj?')" class="qchip">Contact</button>
-        <button onclick="sendQuick('What is his work experience?')" class="qchip">Experience</button>
-      </div>
-    </div>
 
-    <!-- Input -->
-    <div
-      style="padding:10px 12px;border-top:1px solid var(--bd);background:#fff;display:flex;gap:8px;align-items:center;flex-shrink:0;">
-      <input id="chat-input" type="text" placeholder="Ask something..." onkeydown="if(event.key==='Enter')sendMsg()"
-        style="flex:1;border:1.5px solid var(--bd);border-radius:100px;padding:8px 14px;font-size:.81rem;outline:none;font-family:var(--fb);color:var(--tx);background:var(--bg);transition:border-color .15s;"
-        onfocus="this.style.borderColor='var(--g)'" onblur="this.style.borderColor='var(--bd)'" />
-      <button onclick="sendMsg()"
-        style="width:34px;height:34px;background:var(--g);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .15s,transform .1s;"
-        onmouseover="this.style.background='#145a3c'" onmouseout="this.style.background='var(--g)'"
-        onmousedown="this.style.transform='scale(.92)'" onmouseup="this.style.transform='scale(1)'">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="white">
-          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
-        </svg>
-      </button>
-    </div>
-  </div>
+        <!-- Chat Window -->
+        <div
+            id="chat-window"
+            style="
+                position: fixed;
+                bottom: 148px;
+                right: 22px;
+                z-index: 1002;
+                width: 320px;
+                max-height: 480px;
+                background: #fff;
+                border-radius: 20px;
+                box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
+                border: 1.5px solid var(--bd);
+                flex-direction: column;
+                overflow: hidden;
+                font-family: var(--fb);
+            "
+        >
+            <!-- Header -->
+            <div
+                style="
+                    background: var(--g);
+                    padding: 14px 16px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    flex-shrink: 0;
+                "
+            >
+                <div
+                    style="
+                        width: 38px;
+                        height: 38px;
+                        background: rgba(255, 255, 255, 0.15);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.15rem;
+                        flex-shrink: 0;
+                    "
+                >
+                    🤖
+                </div>
+                <div>
+                    <div
+                        style="
+                            color: #fff;
+                            font-weight: 600;
+                            font-size: 0.87rem;
+                        "
+                    >
+                        Ask Yuvraj's AI
+                    </div>
+                    <div
+                        style="
+                            color: rgba(255, 255, 255, 0.7);
+                            font-size: 0.7rem;
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
+                            margin-top: 2px;
+                        "
+                    >
+                        <span
+                            style="
+                                width: 6px;
+                                height: 6px;
+                                background: #6ee7b7;
+                                border-radius: 50%;
+                                display: inline-block;
+                                animation: blink 2s infinite;
+                            "
+                        ></span>
+                        Always online
+                    </div>
+                </div>
+            </div>
 
+            <!-- Messages -->
+            <div
+                id="chat-messages"
+                style="
+                    flex: 1;
+                    overflow-y: auto;
+                    padding: 14px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    max-height: 280px;
+                    background: var(--bg);
+                "
+            >
+                <div style="display: flex; gap: 8px; align-items: flex-end">
+                    <div class="bot-av-wrap">
+                        <div class="bot-av">🤖</div>
+                    </div>
+                    <div
+                        style="
+                            background: #fff;
+                            border: 1px solid var(--bd);
+                            border-radius: 16px 16px 16px 4px;
+                            padding: 9px 12px;
+                            font-size: 0.81rem;
+                            color: var(--tx);
+                            line-height: 1.55;
+                            max-width: 220px;
+                            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+                        "
+                    >
+                        Hi! 👋 I'm Yuvraj's portfolio assistant. Ask me anything
+                        about his skills, projects, experience, or how to get in
+                        touch!
+                    </div>
+                </div>
+                <div
+                    id="quick-chips"
+                    style="
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 5px;
+                        padding-left: 34px;
+                    "
+                >
+                    <button
+                        onclick="sendQuick('What skills does Yuvraj have?')"
+                        class="qchip"
+                    >
+                        Skills
+                    </button>
+                    <button
+                        onclick="sendQuick('Tell me about his projects')"
+                        class="qchip"
+                    >
+                        Projects
+                    </button>
+                    <button
+                        onclick="sendQuick('How can I contact Yuvraj?')"
+                        class="qchip"
+                    >
+                        Contact
+                    </button>
+                    <button
+                        onclick="sendQuick('What is his work experience?')"
+                        class="qchip"
+                    >
+                        Experience
+                    </button>
+                </div>
+            </div>
 
+            <!-- Input -->
+            <div
+                style="
+                    padding: 10px 12px;
+                    border-top: 1px solid var(--bd);
+                    background: #fff;
+                    display: flex;
+                    gap: 8px;
+                    align-items: center;
+                    flex-shrink: 0;
+                "
+            >
+                <input
+                    id="chat-input"
+                    type="text"
+                    placeholder="Ask something..."
+                    onkeydown="if (event.key === 'Enter') sendMsg();"
+                    style="
+                        flex: 1;
+                        border: 1.5px solid var(--bd);
+                        border-radius: 100px;
+                        padding: 8px 14px;
+                        font-size: 0.81rem;
+                        outline: none;
+                        font-family: var(--fb);
+                        color: var(--tx);
+                        background: var(--bg);
+                        transition: border-color 0.15s;
+                    "
+                    onfocus="this.style.borderColor = 'var(--g)'"
+                    onblur="this.style.borderColor = 'var(--bd)'"
+                />
+                <button
+                    onclick="sendMsg()"
+                    style="
+                        width: 34px;
+                        height: 34px;
+                        background: var(--g);
+                        border: none;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-shrink: 0;
+                        transition:
+                            background 0.15s,
+                            transform 0.1s;
+                    "
+                    onmouseover="this.style.background = '#145a3c'"
+                    onmouseout="this.style.background = 'var(--g)'"
+                    onmousedown="this.style.transform = 'scale(.92)'"
+                    onmouseup="this.style.transform = 'scale(1)'"
+                >
+                    <svg
+                        width="15"
+                        height="15"
+                        viewBox="0 0 24 24"
+                        fill="white"
+                    >
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                    </svg>
+                </button>
+            </div>
+        </div> {% endcomment %}
 
+        <script src="{% static 'assets/js/chat_bot.js' %}"></script>
+        <script src="{% static 'assets/js/main.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!--  <script>-->
+        <!--    document.querySelectorAll('.exp-tab').forEach(tab => {-->
+        <!--      tab.addEventListener('click', () => {-->
+        <!--        document.querySelectorAll('.exp-tab').forEach(t => t.classList.remove('active'));-->
+        <!--        document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));-->
+        <!--        tab.classList.add('active');-->
+        <!--        document.getElementById('panel-' + tab.dataset.panel).classList.add('active');-->
+        <!--      });-->
+        <!--    });-->
+        <!--    const ro = new IntersectionObserver(entries => {-->
+        <!--      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });-->
+        <!--    }, { threshold: 0.1 });-->
+        <!--    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));-->
+        <!--    const bo = new IntersectionObserver(entries => {-->
+        <!--      entries.forEach(e => {-->
+        <!--        if (e.isIntersecting)-->
+        <!--          e.target.querySelectorAll('.bar-fill').forEach(b => b.style.width = b.dataset.w + '%');-->
+        <!--      });-->
+        <!--    }, { threshold: 0.3 });-->
+        <!--    document.querySelectorAll('.skill-bars-wrap').forEach(el => bo.observe(el));-->
+        <!--  </script>-->
 
-
-
-
-  <script src="{% static 'assets/js/chat_bot.js' %}"></script>
-  <script src="{% static 'assets/js/main.js' %}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!--  <script>-->
-  <!--    document.querySelectorAll('.exp-tab').forEach(tab => {-->
-  <!--      tab.addEventListener('click', () => {-->
-  <!--        document.querySelectorAll('.exp-tab').forEach(t => t.classList.remove('active'));-->
-  <!--        document.querySelectorAll('.exp-panel').forEach(p => p.classList.remove('active'));-->
-  <!--        tab.classList.add('active');-->
-  <!--        document.getElementById('panel-' + tab.dataset.panel).classList.add('active');-->
-  <!--      });-->
-  <!--    });-->
-  <!--    const ro = new IntersectionObserver(entries => {-->
-  <!--      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });-->
-  <!--    }, { threshold: 0.1 });-->
-  <!--    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));-->
-  <!--    const bo = new IntersectionObserver(entries => {-->
-  <!--      entries.forEach(e => {-->
-  <!--        if (e.isIntersecting)-->
-  <!--          e.target.querySelectorAll('.bar-fill').forEach(b => b.style.width = b.dataset.w + '%');-->
-  <!--      });-->
-  <!--    }, { threshold: 0.3 });-->
-  <!--    document.querySelectorAll('.skill-bars-wrap').forEach(el => bo.observe(el));-->
-  <!--  </script>-->
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZRRP72Z1WF"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-ZRRP72Z1WF');
-  </script>
-</body>
-
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-ZRRP72Z1WF"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "G-ZRRP72Z1WF");
+        </script>
+    </body>
 </html>
