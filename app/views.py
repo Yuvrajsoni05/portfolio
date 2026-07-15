@@ -100,6 +100,7 @@ resume_context = load_resume()
 # =========================
 
 @csrf_exempt
+
 def chatbot(request):
     if request.method == "POST":
         try:
