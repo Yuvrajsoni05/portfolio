@@ -18,10 +18,10 @@ from app.models import ChatBot, MyContext
 
 
 def index(request):
-    print("THis ",os.getenv("HF_TOKEN"))
-    print(
-        requests.get("https://huggingface.co").status_code
-    )
+   
+    # print(
+    #     requests.get("https://huggingface.co").status_code
+    # )
     return render(request, 'home.html')
 
 
@@ -54,13 +54,15 @@ def admin_login(request):
     except Exception as e:
         print("Error")
     return render(request, 'admin_side/admin_login.html')
-API_URL =  os.getenv("API_URL")
+
+
+
+API_URL = os.getenv("API_URL")
 
 HEADERS = {
-    "Authorization": os.getenv("HF_TOKEN"),
-    "Content-Type": "application/json"
+    "Authorization": f"Bearer {os.getenv('HF_TOKEN')}",
+    "Content-Type": "application/json",
 }
-
 
 
 BASE_DIR = os.path.dirname(
@@ -113,68 +115,77 @@ def chatbot(request):
                     "reply": "Please enter a message."
                 })
 
+            # # First time user
             # if "step" not in request.session:
             #     request.session["step"] = "ask_name"
-            #
+
             # step = request.session["step"]
+
+            # # Ask user's name
+            # if step == "ask_name":
+            #     request.session["step"] = "get_name"
+
+            #     return JsonResponse({
+            #         "reply": "Hello! What's your name?"
             #     })
-            #
+
+            # # Save user's name
             # elif step == "get_name":
+
             #     request.session["name"] = user_message
+
             #     print("NAME:", request.session["name"])
-            #     chat = ChatBot.objects.create(name=request.session["name"])
-            #     chat.save()
-            #
+
+            #     ChatBot.objects.create(
+            #         name=request.session["name"]
+            #     )
+
             #     request.session["step"] = "chat"
-            #
+
             #     return JsonResponse({
             #         "reply": f"Hello {user_message}, you are connected."
             #     })
-            # AI Request
+
+            # Normal Chat
+            # elif step == "chat":
+
             response = requests.post(
-                API_URL,
-                headers=HEADERS,
-                json={
-                    "model": "meta-llama/Llama-3.1-8B-Instruct",
-                    "messages": [
-                        {
-                            "role": "system",
-                            "content": f"""
-You are an AI assistant representing Yuvraj Soni.
+                    API_URL,
+                    headers=HEADERS,
+                    json={
+                        "model": "meta-llama/Llama-3.1-8B-Instruct",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": f"""
+        You are an AI assistant representing Yuvraj Soni.
 
-Provide answers that are:
-- Short
-- Simple
-- Professional
+        The user's name is {request.session.get("name")}.
 
-Formatting rules:
-- Do NOT use asterisks (*) or any bold/markdown formatting
-- Do NOT add unnecessary headings like Greetings or Introduction
-- Keep responses clean and natural
-- Use numbered points only when needed
-- Keep each point short (1 line)
+        Provide answers that are:
+        - Short
+        - Simple
+        - Professional
 
-For normal questions, reply in 1–2 simple lines.
-For lists, use this format:
-1. Keyword: Short explanation
+        Formatting rules:
+        - Do NOT use asterisks (*) or markdown
+        - Keep replies natural
+        - Use numbered points only when needed
 
-Avoid long paragraphs and over-formatting.
+        Resume Context:
+        {resume_context}
+        """
+                            },
+                            {
+                                "role": "user",
+                                "content": user_message
+                            }
+                        ],
+                        "max_tokens": 200,
+                        "temperature": 0.7
+                    }
+                )
 
-If a question goes beyond the resume context, respond briefly without making unsupported claims.
-
-Resume Context:
-{resume_context}
-"""
-                        },
-                        {
-                            "role": "user",
-                            "content": user_message
-                        }
-                    ],
-                    "max_tokens": 200,
-                    "temperature": 0.7
-                }
-            )
             if response.status_code != 200:
                 return JsonResponse({
                     "reply": response.text
@@ -182,13 +193,16 @@ Resume Context:
 
             result = response.json()
             bot_reply = result["choices"][0]["message"]["content"]
+
             return JsonResponse({
                 "reply": bot_reply
             })
+
         except Exception as e:
             return JsonResponse({
                 "reply": str(e)
             })
+
     return JsonResponse({
         "error": "Invalid request"
     })
@@ -277,3 +291,7 @@ def create_context(request):
 #         request,
 #         'certifications.html'
 #     )
+
+
+def call_me(request):
+    return render(request,'demo.html')
